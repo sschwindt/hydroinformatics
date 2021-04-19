@@ -1,0 +1,58 @@
+- file: index
+
+- part: Virtual Classroom
+  chapters:
+  - file: lectures/classroom
+  - file: lectures/lectures
+  - file: lectures/take_seat
+
+- part: Software
+  chapters:
+  - file: get-started/vm
+  - file: get-started/ide
+  - file: get-started/git
+  - file: get-started/documentation
+  - file: get-started/geo
+  - file: get-started/install-openfoam
+  - file: get-started/install-telemac
+  - file: get-started/others
+
+- part: Python (basics)
+  chapters:
+  - file: python-basics/python
+  - file: python-basics/pyinstall
+
+- part: Python (geo)
+  chapters:
+  - file: geopy/geo-python
+  - file: geopy/geospatial-data
+  - file: geopy/geo-pckg
+
+- part: Exercises
+  chapters:
+  - file: exercises/exercises
+  - file: exercises/ex-git
+  - file: exercises/python-exercises
+    sections:
+    - file: exercises/ex-ms
+    - file: exercises/ex-sp
+    - file: exercises/ex-floods
+    - file: exercises/ex-sediment
+    - file: exercises/ex-gui
+    - file: exercises/ex-geco
+
+- part: Disclaimer and License
+  chapters:
+  - file: troubleshoot/dbg-anaconda
+  - file: troubleshoot/dbg-basement
+  - file: troubleshoot/dbg-jupyter
+  - file: troubleshoot/dbg-linux
+  - file: troubleshoot/dbg-numerical-models
+  - file: troubleshoot/dbg-python
+  - file: troubleshoot/dbg-telemac
+  - file: troubleshoot/dbg-vm
+
+- part: Disclaimer and License
+  chapters:
+  - file: terms/license
+  - file: terms/disclaimer

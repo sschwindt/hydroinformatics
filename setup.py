@@ -1,85 +1,96 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
-
-lines = Path(".").joinpath("__init__.py")
-version = "0.1"
-for line in lines.read_text().split("\n"):
-    if line.startswith("__version__ ="):
-        version = line.split(" = ")[-1].strip('"')
+text = Path("./jupyter_book/__init__.py").read_text(encoding="utf8")
+for line in text.split("\n"):
+    if "__version__" in line:
         break
+version = line.split("= ")[-1].strip('"')
+
+# Documentation requirements
+path_doc_reqs = Path(__file__).parent.joinpath("docs", "requirements.txt")
+doc_reqs = [
+    ii
+    for ii in path_doc_reqs.read_text(encoding="utf8").split("\n")
+    if not ii.startswith("#")
+]
+# Test requirements
+test_reqs = [
+    "coverage",
+    "texsoup",
+    "pytest>=3.6,<4",
+    "pytest-cov",
+    "pytest-xdist",
+    "pytest-timeout",
+    "beautifulsoup4",
+    "matplotlib",
+    "pytest-regressions",
+    "altair",
+    "sphinx_click",
+    "sphinx_tabs",
+    "pyppeteer",
+    "beautifulsoup4",
+    "cookiecutter",
+]
+# Define all extras
+extras = {
+    "code_style": ["flake8<3.8.0,>=3.7.0", "black", "pre-commit==1.17.0"],
+    "sphinx": doc_reqs,
+    "testing": test_reqs,
+    "pdfhtml": ["pyppeteer"],
+}
+# Set alias for all extras with "all"
+extras["all"] = set(ii for jj in extras.values() for ii in jj)
 
 
 setup(
-    name="eConnect",
+    name="jupyter-book",
     version=version,
-    python_requires=">=3.7",
+    python_requires=">=3.6",
     author="Sebastian Schwindt",
-    author_email="sebastian.schwindt@iws.uni-stuttgart.de",
-    url="https://github.com/sschwindt/hydroinformatics",
+    author_email="sebastian.schwindt AT iws.uni-stuttgart.de",
+    url="https://sebastian-schwindt.org/",
     project_urls={
-        "Documentation": "https://hydroinformatics.readthedocs.io/",
-        "Funding": "https://www.uni-stuttgart.de/",
-        "Source": "https://github.com/sschwindt/hydroinformatics",
+        "Documentation": "https://hyrdroinformatics.readthedocs.io",
+        "Funding": "https://sebastian-schwindt.org",
+        "Source": "https://github.com/sschwindt/hydroinformatics/",
+        "Tracker": "https://github.com/sschwindt/hydroinformatics/issues",
     },
     # this should be a whitespace separated string of keywords, not a list
-    keywords="rivers python water science",
-    description="hydroinformatics: From algorithms to applications.",
-    license="BSD License",
-    long_description=Path("./README.md").read_text(),
+    keywords="eco-hydraulics, morphodynamics, teaching, research, python, water resources",
+    description="Online learning materials",
+    long_description=open("./README.md", "r").read(),
     long_description_content_type="text/markdown",
+    license="BSD",
     packages=find_packages(),
     install_requires=[
         "pyyaml",
-        "docutils>=0.15",
-        "sphinx",
+        "docutils>=0.15,<0.17",
+        "sphinx>=2,<4",
+        "linkify-it-py~=1.0.1",
+        "myst-nb~=0.12.0",
+        "jupytext>=1.8,<1.11",
         "click",
-        "pydata-sphinx-theme~=0.4.1",
-        "beautifulsoup4",
-        "importlib-resources~=3.0.0",
+        "setuptools",
+        "nbformat",
+        "nbconvert<6",
+        "jsonschema",
+        "sphinx_togglebutton",
+        "sphinx-copybutton",
+        "sphinx-comments",
+        "sphinxcontrib-bibtex~=2.2.0",
+        "sphinx_book_theme>=0.0.39",
+        "sphinx-thebe>=0.0.6",
+        "sphinx-panels~=0.5.2",
+        "nested-lookup~=0.2.21",
+        "jupyterbook-latex~=0.2.0",
     ],
-
-    include_package_data=True,
-    extras_require={
-        "code_style": ["pre-commit~=2.7.0"],
-        "sphinx": [
-            "folium",
-            "numpy",
-            "matplotlib",
-            "ipywidgets",
-            "pandas",
-            "nbclient",
-            "myst-nb~=0.10.1",
-            "sphinx-togglebutton>=0.2.1",
-            "sphinx-copybutton",
-            "plotly",
-            "sphinxcontrib-bibtex",
-            "sphinx-thebe",
-            "ablog~=0.10.11",
-        ],
-        "testing": [
-            "myst_nb~=0.10.1",
-            "sphinx_thebe",
-            "coverage",
-            "pytest~=6.0.1",
-            "pytest-cov",
-            "pytest-regressions~=2.0.1",
-        ],
-        "live-dev": ["sphinx-autobuild", "web-compile~=0.2.1"],
-    },
+    extras_require=extras,
     entry_points={
-        "sphinx.html_themes": ["sphinx_book_theme = sphinx_book_theme"],
+        "console_scripts": [
+            "jb = jupyter_book.commands:main",
+            "jupyter-book = jupyter_book.commands:main",
+        ]
     },
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: BSD License",
-        "Operating System :: OS Independent",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3.4",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Development Status :: 2 - Pre-Alpha",
-    ],
+    include_package_data=True,
 )
