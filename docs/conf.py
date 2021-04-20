@@ -39,6 +39,7 @@ author = "Sebastian Schwindt"
 bibtex_bibfiles = ["references.bib"]
 comments_config = {"hypothesis": False, "utterances": False}
 copyright = "2021"
+master_doc = "index"
 project = u"Hydroinformatics"
 release = "latest"
 slug = re.sub(r"\W+", "-", project.lower())
@@ -163,7 +164,6 @@ locale_dirs = ["locale/", os.path.abspath("..") + "docs/"]
 man_pages = [
     (master_doc, slug, project, [author], 1)
 ]
-master_doc = "index"
 mathjax_config = {
     "TeX": {
         "Macros": {
