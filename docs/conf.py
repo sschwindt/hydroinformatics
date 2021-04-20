@@ -108,12 +108,12 @@ html_show_sourcelink = True
 html_sourcelink_suffix = ""
 html_theme = "sphinx_book_theme"
 html_theme_options = {
-    "extra_navbar": 'Authored by <a href="https://sebastian-schwindt.org">Sebastian Schwindt</a>',
+    # "extra_navbar": 'Authored by <a href="https://sebastian-schwindt.org">Sebastian Schwindt</a>',
     "google_analytics_id": "",
     "home_page_in_toc": True,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
-        "collapse_navigation": False,
+        # "collapse_navigation": False,
         "notebook_interface": "classic", # or jupyterlab
         "thebe": False,
     },
