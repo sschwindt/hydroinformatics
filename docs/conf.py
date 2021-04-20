@@ -65,7 +65,7 @@ extensions = [
     "myst_nb",
     "IPython.sphinxext.ipython_console_highlighting",
     "IPython.sphinxext.ipython_directive",
-    "jupyter_book",
+    # "jupyter_book",
     "jupyterbook_latex",
     "jupyter_sphinx",
     "sphinx_book_theme",
