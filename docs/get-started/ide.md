@@ -8,7 +8,8 @@ An ***API*** represents a computing interface that enables interactions between 
 These pages are written with the web-based *IDE* [*JupyterLab*](https://jupyter.org/), which is suitable to follow the course contents. *IDE*s such as *PyCharm* or *Spyder* are more suitable to setup projects locally (e.g., for course assignments).
 ```
 
-## Anaconda {#anaconda}
+(anaconda)=
+## Anaconda
 
 ### Anaconda Navigator
 *Anaconda* is basically a *Python* distribution that enables the usage of a couple of *IDE*s. Today, *Anaconda* is not limited to *Python* anymore and also comes with interfaces and environments for [*R*](https://www.r-project.org/about.html).
@@ -31,8 +32,8 @@ After the successful installation of *Anaconda*, *IDE*s for *Python* programming
 
 To work with *Jupyter* notebooks (open, create or modify), type `jupyter lab` (or `jupyter notebook`) in *Anaconda Prompt (Miniconda3)* and hit *Enter*. The *JupyterLab* application will open in the default webbrowser.
 
-
-## PyCharm (via Anaconda Navigator) {#pycharm}
+(pycharm)=
+## PyCharm (via Anaconda Navigator)
 
 *Jetbrains* [*PyCharm (Community Edition)*](https://www.jetbrains.com/pycharm/) is an open-access IDE for non-commercial use. Alternatives are [*Spyder IDE*](https://www.spyder-ide.org/) (for *Python*) or [*RStudio*](https://rstudio.com/) (*R* and *Python*). However, before launching any project in an *IDE*, the installation of an interpreter (e.g., *Python* or *R*) is necessary (we already installed an interpreter with *Anaconda*).
 
@@ -55,7 +56,8 @@ All set - you are ready to work with *Python*, markdown (documentation), and [gi
 ***Python* users** read more about setting up *conda* environments on the [*Python (basics)*](../python-basics/pyinstall.html#ide-setup) page.
 ```
 
-## JupyterLab {#jupyter}
+(jupyter)=
+## JupyterLab
 
 ### Via Anaconda Navigator
 

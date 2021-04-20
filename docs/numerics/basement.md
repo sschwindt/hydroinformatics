@@ -233,7 +233,7 @@ After data export from *ParaView*:<a name="pv-exp-steps"></a>
 
 ```{figure} ../img/qgis-add-lyr.png
 :alt: basement qgis add layer
-:name: qgis-add-lyr
+:name: qgis-add-lyr-bm
 
 Open the Add Delimited Text Layer import wizard.
 ```
@@ -254,7 +254,9 @@ Open the Add Delimited Text Layer import wizard.
 The Data Source Manager | Delimited Text window with required settings highlighted with the green marker.
 ```
 
-### Use the `results.xdmf` file directly(***recommended for geospatial data conversion***)<a name="qgis-imp-steps"></a>
+(qgis-imp-steps)=
+### Use the `results.xdmf` file directly (**recommended for geospatial data conversion**)
+
 Modify `results.xdmf` and directly import model result in *QGIS*:
 - Open `results.xdmf` in a text editor (e.g., [*Notepad++*](hy_get-started/others.html#npp)
 - Use the find-and-replace tool (`CTRL` + `H` keys in *Notpad++*) to remove file paths before `results_aux.h5` in the document (otherwise *QGIS* will crash later on - [read more in *BASEMENT*'s User Forum](http://people.ee.ethz.ch/~basement/forum/viewtopic.php?id=5261)).

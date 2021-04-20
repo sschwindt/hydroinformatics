@@ -20,6 +20,19 @@
   chapters:
   - file: python-basics/python
   - file: python-basics/pyinstall
+  - file: python-basics/pybase
+  - file: python-basics/pyerror
+  - file: python-basics/pyloop
+  - file: python-basics/pyfun
+  - file: python-basics/pypckg
+  - file: python-basics/classes
+  - file: python-basics/data-handling
+    sections:
+    - file: python-basics/pynum
+    - file: python-basics/xml
+  - file: python-basics/pyplot
+  - file: python-basics/pystyle
+  - file: python-basics/gui
   - file: exercises/python-exercises
     sections:
     - file: exercises/ex-ms
@@ -41,6 +54,10 @@
   - file: geopy/geo-python
     sections:
     - file: geopy/geo-pckg
+    - file: geopy/geo-shp
+    - file: geopy/geo-raster
+    - file: geopy/geo-convert
+    - file: geopy/geo-arcpy
   - file: exercises/geo-exercises
     sections:
     - file: exercises/ex-geco

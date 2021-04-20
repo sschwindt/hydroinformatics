@@ -39,14 +39,14 @@ To truly make your software useful to others, add a case study. Most users will 
 
 ### Troubleshooting
 
-Sure, your code is error-free and of course only the user makes mistakes. Show compassion and integrate specific *try*-*except* statements (more on the [*Python*<sup>basics</sup>](../python-basics/pypyerror.html#try-except) page) in the source code, which point out possible error sources. These error (and maybe even warning) messages should all be listed in a *Troubleshooting* section of the code documentation. Any source of error (message) should be documented regarding the following aspects:
+Sure, your code is error-free and of course only the user makes mistakes. Show compassion and integrate specific *try*-*except* statements (more on the [*Python*<sup>basics</sup>](../python-basics/pyerror.html#try-except) page) in the source code, which point out possible error sources. These error (and maybe even warning) messages should all be listed in a *Troubleshooting* section of the code documentation. Any source of error (message) should be documented regarding the following aspects:
 
 * Cause: Possible reasons for why an error occurs.
 * Remedy: Steps for troubleshooting an error.
 
 ### Contributing
 
-Your software is brilliant. To make the software even more brilliant, foolproof, and powerful, it is a great idea (actually: an absolute must) to get more authors on the development team. However, it is very likely that any other author has individual preferences when it comes to code standards. So make sure to set up clear rules for other contributors from the beginning. For example, define clear code conventions as explained on the [code style](../python-basics/pypystyle.html) page.
+Your software is brilliant. To make the software even more brilliant, foolproof, and powerful, it is a great idea (actually: an absolute must) to get more authors on the development team. However, it is very likely that any other author has individual preferences when it comes to code standards. So make sure to set up clear rules for other contributors from the beginning. For example, define clear code conventions as explained on the [code style](../python-basics/pystyle.html) page.
 
 
 ## Markdown
@@ -76,7 +76,7 @@ Your software is brilliant. To make the software even more brilliant, foolproof,
 
 Many text editors provide *Markdown* add-ons and *Markdown*-only editors are loosing their significance more and more. Editors that simultaneously support *Markdown* and programming languages like *Python* or *R* are state of the art and therefore recommended.
 
-Basic text editors that support *Markdown* are listed [here](hy_get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*Jupyter Lab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). [Read more about Anaconda and associated *IDE*s on the previous pages.](../get-started/ide.html)
+Basic text editors that support *Markdown* are listed [here](hy_get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*JupyterLab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). [Read more about Anaconda and associated *IDE*s on the previous pages.](../get-started/ide.html)
 
 ### Markdown command overview (+images)
 
@@ -128,7 +128,7 @@ Table columns are separated by a `|` sign. The first row determines row headers 
 ```markdown
 | Fruit | Kingdom | Genus |
 |-------|:-------:|------:|
-|Banana | Plantae | Musa |
+|Banana | Plantae | Musa  |
 |Jackfruit|Plantae|Artocarpus|
 ```
 
@@ -146,12 +146,13 @@ Converting complex tables from workbooks (e.g., from *LibreOffice Calc* or *MS E
 ### Math expressions: Equations
 
 Math expressions and equations must be implemented as text in standard *Markdown*. *GitHub*s markdown interpreter does not support many external *TeX*-like equation renderers for reasons of security. However, *GitHub* users can still render *TeX*-like equations with the following code:
+
 ```html
 <img src="https://render.githubusercontent.com/render/math?math=sin{\alpha} = \sqrt{1-cos^{2}\alpha}">
 ```
-This results in    <img src="https://render.githubusercontent.com/render/math?math=sin{\alpha} = \sqrt{1-cos^{2}\alpha}">
+This results in <img src="https://render.githubusercontent.com/render/math?math=sin{\alpha} = \sqrt{1-cos^{2}\alpha}">
 
-Note that the equation starts after `math&math=`. Thus for using the math snippet in a document, copy and modify the following expression `<img src="https://render.githubusercontent.com/render/math?math=TYPE =  EQUATION HERE")).
+Note that the equation starts after `math&math=`. Thus for using the math snippet in a document, copy and modify the following expression `<img src="https://render.githubusercontent.com/render/math?math=TYPE =  EQUATION HERE">`.
 
 ### html - markdown
 *html* structures can be flawlessly used in *Markdown*, which itself is nothing else than simplified *html*. Therefore, any *html* structure can be used within markdown and the above-shown equation implementation already represents the first example for *html* usage in a *Markdown* document. The following sections provide an overview of some more or less frequently used *html* symbols that also work with *Markdown*.
@@ -247,10 +248,9 @@ There are other git-pages and wiki host providers out there, such as [GitLab](ht
 Get practice in markdown with the [markdown & git](exercisesex-git.html) exercise.
 ```
 
-
 ## *reStructuredText*, *Sphinx* and readthedocs
 
-An alternative to markdown is [*reStructuredText*](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) that enables embedding *Python* *docstrings* ([read more in the code style conventions](../python-basics/pypystyle.html) of any script or module with [*Sphinx*](https://www.sphinx-doc.org).
+An alternative to markdown is [*reStructuredText*](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) that enables embedding *Python* *docstrings* ([read more in the code style conventions](../python-basics/pystyle.html) of any script or module with [*Sphinx*](https://www.sphinx-doc.org).
 
 Without any *Python* or programming knowledge, it might be hard to get started with *Sphinx*. So make sure to understand *Python* basics and document any code with *docstrings*, at best using [*google style*](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) formatting. Once you start documenting your first *Python* package, *google-style* *docstrings* will enable the fast generation of high-quality docs. Currently, one of the best options for partially auto-generating code documentations, for any programming language, is [*readthedocs*](https://readthedocs.org/), which builds on *Sphinx* and *reStructuredText*.
 

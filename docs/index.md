@@ -10,26 +10,26 @@ Large datasets, such as airborne imagery and hydro-meteorological datasets colle
 
 ## Contents
 
-Find your course in the [Classroom](classroom.html) chapter ([lectures and exercises](/lectures/lectures.html)) and take a seat.
+Find your course in the {doc}`virtual classroom </lectures/classroom>` ({doc}`lectures and exercises </lectures/lectures>`) and take a seat.
 
 The *Get started* chapter represents a summary of provide systematic workflows to setup your computer for:
-- coding with [*Python* *Anaconda*](get-started/ide.html)
-- code documentation with [*markdown*](get-started/documentation.html)
-- version control with [*git*](get-started/git.html)
-- geospatial analyses with [desktop applications](get-started/geo.html) such as *QGIS*
-- using [auxiliary tools and open-source/access alternatives](get-started/others.html) to proprietary software such as *GNU Octave* (similar to *Matlab*) or *Libre Office* (similar to MS Office)
+- coding with {doc}`Python Anaconda </get-started/ide>`
+- code documentation with {doc}`markdown </get-started/documentation>`
+- version control with {doc}`git <get-started/git>`
+- geospatial analyses with {doc}`desktop applications </get-started/geo>` such as *QGIS*
+- using {doc}`auxiliary tools and open-source/access alternatives </get-started/others>` to proprietary software such as *GNU Octave* (similar to *Matlab*) or *Libre Office* (similar to MS Office)
 
 The *Python* chapters provide:
-- a general introduction to *Python* programming and object orientation ([basics](python-basics/python.html));
-- an overview of [geospatial data and analyses with *Python*](geopy/geo-python.html).
+- a general introduction to *Python* programming and object orientation ({doc}`basics </python-basics/python>`);
+- an overview of {doc}`geospatial data and analyses with Python </geopy/geo-python>`.
 
 The numerical modelling chapter provides complete workflows for getting started with numerical river models:
-- [*ETH Zurich*'s *BASEMENT*](numerics/basement.html)
-- [*TELEMAC*](numerics/telemac.html)
+- {doc}`ETH Zurich's *BASEMENT* </numerics/basement>`
+- {doc}`TELEMAC </numerics/telemac>`
 - More in the future
 
 The chapters come along with exercises that align with the learning contents of this e-book and feature applications in water resources management, hydraulic engineering, and ecohydraulics.
 
-The [Troubleshooting](troubleshoot/dbg_anaconda.html) chapter includes information about how to debug known issues (not that issues ever existed...).
+The {doc}`Troubleshooting </troubleshoot/dbg_anaconda>` chapter includes information about how to debug known issues (not that issues ever existed...).
 
 Enjoy a successful and entertaining learning experience!

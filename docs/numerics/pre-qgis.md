@@ -37,7 +37,7 @@ Installation of the BASEmesh plugin.
 
 ```{figure} ../img/qgis-pluggedin.png
 :alt: qgis basement plugins
-:name: qgis-plugins
+:name: qgis-pluggedin
 
 
 The BASEmesh plugin is available in QGIS' Plugins menu after successful installation.
