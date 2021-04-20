@@ -73,7 +73,7 @@ extensions = [
     # "sphinx_comments",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
-    "sphinx_panels",
+    # "sphinx_panels",
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinx.ext.autodoc",
