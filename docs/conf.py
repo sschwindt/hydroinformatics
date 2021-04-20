@@ -70,7 +70,7 @@ extensions = [
     "jupyter_sphinx",
     "sphinx_book_theme",
     "sphinx_click.ext",
-    "sphinx_comments",
+    # "sphinx_comments",
     "sphinx_copybutton",
     "sphinx_inline_tabs",
     "sphinx_panels",
