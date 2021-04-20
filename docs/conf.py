@@ -66,7 +66,7 @@ extensions = [
     "IPython.sphinxext.ipython_console_highlighting",
     "IPython.sphinxext.ipython_directive",
     # "jupyter_book",
-    "jupyterbook_latex",
+    # "jupyterbook_latex",
     "jupyter_sphinx",
     "sphinx_book_theme",
     "sphinx_click.ext",
