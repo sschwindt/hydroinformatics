@@ -22,8 +22,8 @@ def is_development_build():
 
 
 sys.path.insert(0, os.path.abspath(".."))
-sys.path.insert(0, os.path.abspath("."))
-sys.path.append(os.path.abspath("..") + "/img/")
+sys.path.insert(0, os.path.abspath(""))
+sys.path.append(os.path.abspath("") + "/img/")
 
 # the following modules will be mocked (i.e. bogus imports - required for C-dependent packages)
 autodoc_mock_imports = [
@@ -91,7 +91,23 @@ gettext_compact = False
 globaltoc_path = os.path.abspath("..") + "/docs/_toc.yml"
 
 # HTML settings
-html_theme = "sphinx_book_theme"
+html_context = {
+    "date": datetime.date.today().strftime("%Y-%m-%d"),
+    "display_github": True,
+    "github_user": "sschwindt",
+    "github_repo": "hyrdoinformatics",
+    "github_version": "main/",
+    "conf_py_path": "/docs/"
+}
+
+html_add_permalinks = "¶"
+html_baseurl = ""
+html_copy_source = True
+html_favicon = os.path.abspath("..") + "/img/icons/favicon.ico"  # relative to source dir (where confy.py lives)
+html_logo = "img/icons/icon.png"
+html_show_sourcelink = True
+html_sourcelink_suffix = ""
+html_theme = "jupyter_book"
 html_theme_options = {
     "extra_navbar": 'Authored by <a href="https://sebastian-schwindt.org">Sebastian Schwindt</a>',
     "extra_footer": "",
@@ -108,29 +124,10 @@ html_theme_options = {
     "path_to_docs": os.path.abspath("..") + "/docs/",
     "repository_url": "https://github.com/sschwindt/hyrdo-informatics/",
     "repository_branch": "main",
-    "search_bar_text": "Search this book...",
     "use_edit_page_button": False,
     "use_issues_button": False,
     "use_repository_button": True,
 }
-
-html_context = {
-    "date": datetime.date.today().strftime("%Y-%m-%d"),
-    "display_github": True,
-    "github_user": "sschwindt",
-    "github_repo": "hyrdo-informatics",
-    "github_version": "main/",
-    "conf_py_path": "/docs/"
-}
-
-html_add_permalinks = "¶"
-html_baseurl = ""
-html_copy_source = True
-html_favicon = os.path.abspath("..") + "/img/icons/favicon.ico"  # relative to source dir (where confy.py lives)
-html_logo = "img/icons/icon.png"
-html_show_sourcelink = True
-html_sourcelink_suffix = ""
-html_theme = "sphinx_book_theme"
 html_title = "Hydroinformatics"
 
 if not ("READTHEDOCS" in os.environ):
