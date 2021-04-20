@@ -48,7 +48,7 @@
 - part: Numerical Modeling
   chapters:
   - file: numerics/numerical-modeling
-  - file: numerics/pre-gis
+  - file: numerics/pre-qgis
   - file: numerics/basement
   - file: numerics/telemac
     sections:

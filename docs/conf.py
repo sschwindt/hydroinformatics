@@ -107,7 +107,7 @@ html_favicon = os.path.abspath("..") + "/img/icons/favicon.ico"  # relative to s
 html_logo = "img/icons/icon.png"
 html_show_sourcelink = True
 html_sourcelink_suffix = ""
-html_theme = "jupyter_book"
+html_theme = "sphinx_book_theme"
 html_theme_options = {
     "extra_navbar": 'Authored by <a href="https://sebastian-schwindt.org">Sebastian Schwindt</a>',
     "extra_footer": "",

@@ -60,9 +60,11 @@ Region definitions.
 - Define `STRINGDEF` item [1] as:
     * `name` = `Outflow`
     * `upstream_direction` = `right`
-    ```{note}
+
+```{note}
 If you used [BASEmesh’s *Stringdef* tool](../numerics/qgis-prepro.html#stringdef), the upstream direction must be defined as `right`.
 ```
+
 - Add the initial condition in the `HYDRAULICS` section with by right-clicking > `Add item` > `INITIAL` (if not yet present) and set `type`: “DRY” (i.e., the river is dry at the beginning of the simulation).<a name="init"></a>
 - Add upstream and downstream boundary conditions with a right-click on the `HYDRAULICS` section > `Add item` > `BOUNDARY` (if not yet present), then right-click on the new `BOUNDARY` section > `Add item STANDARD` > `Add item` (2 times)
 - Define BOUNDARY item [0] as:<a name="bound"></a>
