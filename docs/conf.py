@@ -38,7 +38,7 @@ from sphinx.locale import _
 # HEADER VARIABLES
 author = "Sebastian Schwindt"
 bibtex_bibfiles = ["references.bib"]
-comments_config = {"hypothesis": False, "utterances": False}
+# comments_config = {"hypothesis": False, "utterances": False}
 copyright = "2021"
 master_doc = "index"
 project = u"Hydroinformatics"
@@ -57,8 +57,8 @@ exclude_patterns = [
 
 # execution
 execution_allow_errors = True
-execution_excludepatterns = []
-execution_in_temp = False
+# execution_excludepatterns = []
+# execution_in_temp = False
 execution_timeout = 30
 
 extensions = [
@@ -77,7 +77,7 @@ extensions = [
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinx.ext.autodoc",
-    "sphinxcontrib.bibtex",
+    # "sphinxcontrib.bibtex",
     # "sphinxcontrib.googleanalytics",
     "sphinx.ext.githubpages",
     "sphinx.ext.intersphinx",
@@ -87,7 +87,6 @@ extensions = [
     "sphinx.ext.viewcode",
 ]
 
-gettext_compact = False
 globaltoc_path = os.path.abspath("..") + "/docs/_toc.yml"
 
 # HTML settings
@@ -100,7 +99,7 @@ html_context = {
     "conf_py_path": "/docs/"
 }
 
-html_add_permalinks = "¶"
+# html_add_permalinks = "¶"
 html_baseurl = ""
 html_copy_source = True
 html_favicon = os.path.abspath("..") + "/img/icons/favicon.ico"  # relative to source dir (where confy.py lives)
@@ -109,16 +108,15 @@ html_show_sourcelink = True
 html_sourcelink_suffix = ""
 html_theme = "sphinx_book_theme"
 html_theme_options = {
+    "extra_navbar": 'Authored by <a href="https://sebastian-schwindt.org">Sebastian Schwindt</a>',
     "google_analytics_id": "",
+    "home_page_in_toc": True,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
-        "colab_url": "",
         "collapse_navigation": False,
-        "notebook_interface": "jupyterlab", # or jupyterlab
-        "jupyterhub_url": "",
+        "notebook_interface": "classic", # or jupyterlab
         "thebe": False,
     },
-    "path_to_docs": os.path.abspath("..") + "/docs/",
     "repository_url": "https://github.com/sschwindt/hyrdo-informatics/",
     "repository_branch": "main",
     "use_edit_page_button": False,
@@ -188,10 +186,10 @@ myst_url_schemes = ("mailto", "http", "https")
 
 # other
 nb_output_stderr = "show"
-nitpick_ignore = [
-    ("py:class", "docutils.nodes.document"),
-    ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
-]
+# nitpick_ignore = [
+#     ("py:class", "docutils.nodes.document"),
+#     ("py:class", "docutils.parsers.rst.directives.body.Sidebar"),
+# ]
 numfig = True
 panels_add_bootstrap_css = False
 pygments_style = "sphinx"
