@@ -89,4 +89,11 @@ sphinx:
     - sphinx_click.ext
     - sphinx_inline_tabs
   local_extensions:   # A list of local extensions to load by sphinx specified by "name: path" items
-  config:   # key-value pairs to directly over-ride the Sphinx configuration
+  config:
+    mathjax_config:
+      TeX:
+        Macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat" : ["\\left[\\begin{array}"]
+          "emat" : ["\\end{array}\\right]"]

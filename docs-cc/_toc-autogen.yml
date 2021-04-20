@@ -1,0 +1,59 @@
+- file: index
+
+- part: Introduction
+  chapters:
+  - file: lectures/classroom
+  - file: lectures/lectures
+  - file: lectures/take_seat
+
+- part: Software
+  sections:
+  - file: get-started/documentation
+  - file: get-started/geo
+  - file: get-started/git
+  - file: get-started/ide
+  - file: get-started/install-openfoam
+  - file: get-started/install-telemac
+  - file: get-started/others
+  - file: get-started/vm
+- file: numerics/basement
+  sections:
+  - file: numerics/calibration
+  - file: numerics/numerical-modeling
+  - file: numerics/openfoam
+  - file: numerics/pre-qgis
+  - file: numerics/telemac-gaia
+  - file: numerics/telemac
+  - file: numerics/telemac2d
+  - file: numerics/telemac3d
+  - file: numerics/tm-gaia
+- file: troubleshoot/dbg-anaconda
+  sections:
+  - file: troubleshoot/dbg-basement
+  - file: troubleshoot/dbg-jupyter
+  - file: troubleshoot/dbg-linux
+  - file: troubleshoot/dbg-numerical-models
+  - file: troubleshoot/dbg-python
+  - file: troubleshoot/dbg-telemac
+  - file: troubleshoot/dbg-vm
+- file: exercises/ex-floods
+  sections:
+  - file: exercises/ex-geco
+  - file: exercises/ex-git
+  - file: exercises/ex-gui
+  - file: exercises/ex-ms
+  - file: exercises/ex-sediment
+  - file: exercises/ex-sp
+  - file: exercises/exercises
+  - file: exercises/python-exercises
+- file: python-basics/pyinstall
+  sections:
+  - file: python-basics/python
+- file: terms/disclaimer
+  sections:
+  - file: terms/license
+- file: geopy/geo-pckg
+  sections:
+  - file: geopy/geo-python
+  - file: geopy/geospatial-data
+  - file: geopy/py-lidar
