@@ -21,11 +21,14 @@
   - file: python-basics/python
   - file: python-basics/pyinstall
   - file: python-basics/pybase
-  - file: python-basics/pyerror
-  - file: python-basics/pyloop
-  - file: python-basics/pyfun
-  - file: python-basics/pypckg
-  - file: python-basics/classes
+    sections:
+    - file: python-basics/pyerror
+    - file: python-basics/pyloop
+  - file: python-basics/modularize
+    sections:
+    - file: python-basics/pyfun
+    - file: python-basics/pypckg
+    - file: python-basics/classes
   - file: python-basics/data-handling
     sections:
     - file: python-basics/pynum
