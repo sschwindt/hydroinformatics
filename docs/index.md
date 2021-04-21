@@ -24,7 +24,7 @@ The *Python* chapters provide:
 - an overview of {doc}`geospatial data and analyses with Python </geopy/geo-python>`.
 
 The numerical modelling chapter provides complete workflows for getting started with numerical river models:
-- {doc}`ETH Zurich's *BASEMENT* </numerics/basement>`
+- {doc}`ETH Zurich's BASEMENT </numerics/basement>`
 - {doc}`TELEMAC </numerics/telemac>`
 - More in the future
 
