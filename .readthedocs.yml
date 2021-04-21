@@ -24,7 +24,7 @@ formats:
 python:
   version: 3
   install:
-    - requirements: docs/requirements.txt
+    - requirements: docs/requirements-rtd.txt
     - method: pip
       path: .
       extra_requirements:

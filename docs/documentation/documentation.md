@@ -76,7 +76,7 @@ Your software is brilliant. To make the software even more brilliant, foolproof,
 
 Many text editors provide *Markdown* add-ons and *Markdown*-only editors are loosing their significance more and more. Editors that simultaneously support *Markdown* and programming languages like *Python* or *R* are state of the art and therefore recommended.
 
-Basic text editors that support *Markdown* are listed [here](hy_get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*JupyterLab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). [Read more about Anaconda and associated *IDE*s on the previous pages.](../get-started/ide.html)
+Basic text editors that support *Markdown* are listed [here](../get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*JupyterLab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). [Read more about Anaconda and associated *IDE*s on the previous pages.](../get-started/ide.html)
 
 ### Markdown command overview (+images)
 
@@ -236,7 +236,7 @@ Arrows and operators can also be implemented as *html* symbols. The following ta
 
 ## Wikis
 
-While every [*git*](../get-started/git.html) repository should at least contain a descriptive *README.md*, *wiki*s provide much more detail and guidance. Wikis are a convenient way to guide users with permanent side bars (such as the menu bar on this web site), help users to understand methods and codes, and collaborative coding with precise descriptions of scripts. *GitHub* users find options to activate *wiki*s in the *Settings* tab of a repository and the developers continue to improve *wiki* functions ([read more about *GitHub*'s wikis](https://help.github.com/en/github/building-a-strong-community/about-wikis)).
+While every [*git*](../get-started/git.html) repository should at least contain a descriptive *README.md*, *wiki* s provide much more detail and guidance. Wikis are a convenient way to guide users with permanent side bars (such as the menu bar on this web site), help users to understand methods and codes, and collaborative coding with precise descriptions of scripts. *GitHub* users find options to activate *wiki*s in the *Settings* tab of a repository and the developers continue to improve *wiki* functions ([read more about *GitHub*'s wikis](https://help.github.com/en/github/building-a-strong-community/about-wikis)).
 
 More sophisticated *wiki*s are available on the *Jekyll* themes web site (e.g., the [git-wiki theme](https://jekyll-themes.com/git-wiki/)). In order to use *Jekyll* themes, make sure to enable [*GitHub* pages](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site) (in the repository *Settings* tab) for the repository where you want to establish the *wiki* (this wiki-repository is typically another repository in order to describe a code-repository). Then, install the *Ruby development environment* and *Jekyll* (see [instructions on their website](https://jekyllrb.com/docs/) in order to access and build hundreds of themes for code and project documentation. Forked and locally adapted themes can then be *push*ed to a remote *wiki* repository using [git](../get-started/git.html).
 
@@ -245,7 +245,7 @@ There are other git-pages and wiki host providers out there, such as [GitLab](ht
 ```
 
 ```{admonition} Exercise
-Get practice in markdown with the [markdown & git](exercisesex-git.html) exercise.
+Get practice in markdown with the [markdown & git](../exercises/ex-git.html) exercise.
 ```
 
 ## *reStructuredText*, *Sphinx* and readthedocs
