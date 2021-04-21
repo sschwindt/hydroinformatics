@@ -72,7 +72,7 @@ extensions = [
     # "sphinx_click.ext",
     # "sphinx_comments",
     "sphinx_copybutton",
-    "sphinx_inline_tabs",
+    # "sphinx_inline_tabs",
     "sphinx_panels",
     "sphinx_thebe",
     "sphinx_togglebutton",
