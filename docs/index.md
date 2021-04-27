@@ -14,7 +14,7 @@ Find your course in the {doc}`virtual classroom </lectures/classroom>` ({doc}`le
 
 The *Get started* chapter represents a summary of provide systematic workflows to setup your computer for:
 - coding with {doc}`Python Anaconda </get-started/ide>`
-- code documentation with {doc}`markdown </get-started/documentation>`
+- code documentation with {doc}`markdown </documentation/documentation>`
 - version control with {doc}`git <get-started/git>`
 - geospatial analyses with {doc}`desktop applications </get-started/geo>` such as *QGIS*
 - using {doc}`auxiliary tools and open-source/access alternatives </get-started/others>` to proprietary software such as *GNU Octave* (similar to *Matlab*) or *Libre Office* (similar to MS Office)
@@ -30,6 +30,6 @@ The numerical modelling chapter provides complete workflows for getting started 
 
 The chapters come along with exercises that align with the learning contents of this e-book and feature applications in water resources management, hydraulic engineering, and ecohydraulics.
 
-The {doc}`Troubleshooting </troubleshoot/dbg_anaconda>` chapter includes information about how to debug known issues (not that issues ever existed...).
+The {doc}`Troubleshoot </troubleshoot/dbg-anaconda>` chapter includes information about how to debug known issues (not that issues ever existed...).
 
 Enjoy a successful and entertaining learning experience!

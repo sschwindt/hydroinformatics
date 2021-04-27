@@ -1,8 +1,8 @@
-# The virtual classroom
+# The Virtual Classroom
 
 The virtual classroom provides recorded and live lectures (video-streaming), and exercises with exciting topics on hydraulic engineering, water resources management, and ecohydraulics.
 
-## Overview of lectures
+## Overview of Lectures
 These pages provide complementary materials for the following lectures at the [University of Stuttgart](https://www.iws.uni-stuttgart.de/en/) (Germany):
 
 - Integrated River Engineering and Sediment Management ([see on ILIAS](https://ilias3.uni-stuttgart.de/goto_Uni_Stuttgart_crs_1855964.html) or [read more on this website](../lectures/lectures.html#irme))

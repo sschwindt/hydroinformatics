@@ -1,11 +1,11 @@
-# Reservoir volume assessment with a Sequent Peak Algorithm
+# Reservoir Volume Calculation with a Sequent Peak Algorithm
 
 ```{admonition} Goals
 Write custom functions, load data from comma-type delimited text files, and manipulate data with *numpy*. Use loops and error exceptions efficiently.
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *numpy* including *scipy* and *matplotlib*. Read and understand the [data handling with *numpy*](../python-basics/pypynum.html) and [functions](../python-basics/pypyfun.html).
+*Python* libraries: *numpy* including *scipy* and *matplotlib*. Read and understand the [data handling with *numpy*](../python-basics/pynum) and [functions](../python-basics/pyfun).
 ```
 
 Get ready by cloning the exercise repository:
@@ -14,8 +14,13 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-SequentPeak.git
 ```
 
-![rhone](https://github.com/Ecohydraulics/media/raw/master/jpg/new_bullards_bar.jpg)<br>
-*<sub>New Bullards Bar Dam in California, USA (source: Sebastian Schwindt 2017).</sub>*
+```{figure} https://github.com/Ecohydraulics/media/raw/master/jpg/new_bullards_bar.jpg
+:alt: New Bullards Bar Dam California USA Yuba River
+:name: new-bullards
+
+New Bullards Bar Dam in California, USA (source: Sebastian Schwindt 2017).
+```
+
 
 ## Theory
 Seasonal storage reservoirs retain water during wet months (e.g., monsoon, or rainy winters in Mediterranean climates) to ensure sufficient drinking water and agricultural supply during dry months. For this purpose, enormous storage volumes are necessary, which often exceed 1,000,000 m³.
@@ -23,18 +28,23 @@ Seasonal storage reservoirs retain water during wet months (e.g., monsoon, or ra
 The necessary storage volume is determined from historical inflow measurements and target discharge volumes (e.g., agriculture, drinking water, hydropower, or ecological residual water quantities).
 The sequent peak algorithm (e.g., [Potter 1977](https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1752-1688.1977.tb05564.x) based on [Rippl 1883](https://doi.org/10.1680/imotp.1883.21797) is a decades-old procedure for determining the necessary seasonal storage volume based on a storage volume curve (***SD curve***). The below figure shows an exemplary *SD* curve with volume peaks (local maxima) approximately every 6 months and local volume minima between the peaks. The volume between the last local maximum and the lowest following local minimum determines the required storage volume (see the bright-blue line in the figure).
 
-![sequentpeak](https://github.com/Ecohydraulics/media/raw/master/png/sequent_peak.png)
+```{figure} (https://github.com/Ecohydraulics/media/raw/master/png/sequent_peak.png
+:alt: sequent peak algorithm
+:name: sequentpeak
+
+Scheme of the sequent peak algorithm.
+```
 
 The sequent peak algorithm repeats this calculation over multiple years and the highest volume observed determines the required volume.
 
 In this exercise, we use daily flow measurements from Vanilla River (in Vanilla-arid country with monsoon periods) and target outflow volumes to supply farmers and the population of Vanilla-arid country with sufficient water during the dry seasons. This exercise guides you through loading the daily discharge data, creating the monthly *SD* (storage) curve, and calculating the required storage volume.
 
 
-## Pre-processing of flow data
+## Pre-processing of Flow Data
 
 The daily flow data of the Vanilla River are available from 1979 through 2001 in the form of `.csv` files ([`flows` folder](https://github.com/Ecohydraulics/Exercise-SequentPeak/tree/master/flows)).
 
-### Write a function to read flow data
+### Write a Function to Read Flow Data
 
 The function will loop over the *csv* file names and append the file contents to a dictionary of *numpy* arrays. Make sure to `import numpy as np`, `import os`, and `import glob`.
 
@@ -122,7 +132,7 @@ Running the script returns the `numpy.array` of daily average flows for the year
      [  0.    nan   0.    nan   0.    nan   0.    0.    nan   0.    nan   0. ]]
 ```
 
-### Convert daily flows to monthly volumes
+### Convert Daily Flows to Monthly Volumes
 
 The sequent peak algorithm takes monthly flow volumes, which corresponds to the sum of daily average discharge multiplied with the duration of one day (e.g, 11.0 m³/s · 24 h/d · 3600 s/h). Reading the flow data as above shown results in annual flow tables (average daily flows in m³/s) with the `numpy.array`s of the shape 31x12 arrays (matrices) for every year. We want to get the column sums and multiply the sum with 24 h/d · 3600 s/h. Because the monthly volumes are in the order of million cubic meters (CMS), dividing the monthly sums by `10**6` will simplify the representation of numbers.
 
@@ -157,7 +167,7 @@ if __name__ == "__main__":
         monthly_vol_dict.update({year: daily2monthly(flow_array)})
 ```
 
-## Sequent peak algorithm
+## Sequent Peak Algorithm
 
 With the above routines for reading the flow data, we derived monthly inflow volumes ***In<sub>m</sub>*** in million m³ (stored in `monthly_vol_dict`). For irrigation and drinking water supply, Vanilla-arid country wants to withdraw the following annual volume from the reservoir:
 
@@ -168,7 +178,7 @@ With the above routines for reading the flow data, we derived monthly inflow vol
 Following the scheme of inflow volumes we can create a `numpy.array` for the monthly outflow volumes ***Out<sub>m</sub>***.<br>
 `monthly_supply = np.array([1.5, 1.5, 1.5, 2.0, 4.0, 4.0, 4.0, 5.0, 5.0, 3.0, 2.0, 1.5])`
 
-### The storage volume and difference (SD-line) curves
+### Storage Volume and Difference (SD-line) Curves
 The storage volume of the present month ***S<sub>m</sub>*** is calculated as the result of the water balance from the last month, for example:<br>
 <br>*S<sub>2</sub>* = *S<sub>1</sub>* + *In<sub>1</sub>* - *Out<sub>1</sub>*
 <br>*S<sub>3</sub>* = *S<sub>2</sub>* + *In<sub>2</sub>* - *Out<sub>2</sub>* = *S<sub>1</sub>* + *In<sub>1</sub>* + *In<sub>2</sub>* - *Out<sub>1</sub>* - *Out<sub>2</sub>* <br>
@@ -220,9 +230,14 @@ The new `def sequent_peak(in_vol_series, out_vol_target):` function needs to:
     1. Write two functions, which consecutively find local maxima and then local minima located between the extrema (HOMEWORK!) OR use `from scipy.signal import find_peaks` to find the indices (positions) - consider to write a `find_seasonal_extrema(storage_line)` function.
 * Verify if the curves and extrema are correct by copying the provided `plot_storage_curve` curve to your script ([available in the exercise repository](https://raw.githubusercontent.com/Ecohydraulics/Exercise-SequentPeak/master/plot_function.py) and using it as follows:<br>`plot_storage_curve(storage_line, seas_min_index, seas_max_index, seas_min_vol, seas_max_vol)`
 
-![SDline](https://github.com/Ecohydraulics/media/raw/master/png/storage_curve.png)
+```{figure} (https://github.com/Ecohydraulics/media/raw/master/png/storage_curve.png
+:alt: sequent peak storage difference sd curve
+:name: SDline
 
-### Calculate the required storage volume
+Storage Difference (SD) curve.
+```
+
+### Calculate Required Storage Volume
 
 The required storage volume corresponds to the largest difference between a local maximum and its consecutive lowest local minimum. Therefore, add the following lines to the `sequent_peak` function:
 
@@ -238,7 +253,7 @@ The required storage volume corresponds to the largest difference between a loca
 
 Close the `sequent_peak` function with `return required_volume`
 
-### Call sequent peak algorithm
+### Call Sequent Peak Algorithm
 With all required functions written, the last task is to call the functions in the `if __name__ == "__main__"` statement:
 
 ```python
@@ -268,7 +283,7 @@ if __name__ == "__main__":
     print("The required storage volume is %0.2f million CMS." % required_storage)
 ```
 
-## Closing remarks
+## Closing Remarks
 
 The usage of the sequent peak algorithm (also known as *Rippl's method*, owing to its original author) has evolved and was implemented in sophisticated storage volume control algorithms with predictor models (statistical and/or numerical).
 

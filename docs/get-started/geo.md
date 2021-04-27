@@ -1,13 +1,14 @@
-# Geospatial software
+# Geospatial Software
 
-Geospatial analyses (or analytics) use, manipulate and illustrate data from geographic information systems (GIS). GIS data contain  geographically referenced and spatially explicit information of for example gauging stations, terrain elevation, or land use. Efficient processing of geospatial data involves programming methods, where *Python* is an efficient tool. This page presents desktop software for manual geospatial analyses and the illustration of geospatial data. For geospatial programming, please refer to the section [*Python<sup>geospatial</sup>*](geo-python-basics/python.html).
+Geospatial analyses (or analytics) use, manipulate and illustrate data from geographic information systems (GIS). GIS data contain  geographically referenced and spatially explicit information of for example gauging stations, terrain elevation, or land use. Efficient processing of geospatial data involves programming methods, where *Python* is an efficient tool. This page presents desktop software for manual geospatial analyses and the illustration of geospatial data. For geospatial programming, please refer to the section [*Python<sup>geospatial</sup>*](../geopy/geo-python).
 
 ```{note}
-Geospatial data are either geographically referenced, pixel-based [rasters](https://en.wikipedia.org/wiki/Raster_graphics) data or vector-based *Esri* [shapefiles](https://en.wikipedia.org/wiki/Shapefile) (read more on the [*Python<sup>geospatial</sup>*](../geopy/geospatial-data.html) pages).
+Geospatial data are either geographically referenced, pixel-based [rasters](https://en.wikipedia.org/wiki/Raster_graphics) data or vector-based *Esri* [shapefiles](https://en.wikipedia.org/wiki/Shapefile) (read more on the [*Python<sup>geospatial</sup>*](../geopy/geospatial-data) pages).
 ```
 
-## QGIS {#qgis}
-For the visualization of geodata (`.shp` and `.tif` files) a GIS software is required and the analyses described on these pages refer to the usage of [*QGIS*](https://www.qgis.org). This website uses *QGIS* within the sections on [geospatial programming with *Python*](geo-python-basics/python.html) and [numerical modelling with the ETH Zurich's BASEMENT](../numerics/basement.html) software.
+(qgis)=
+## QGIS
+For the visualization of geodata (`.shp` and `.tif` files) a GIS software is required and the analyses described on these pages refer to the usage of [*QGIS*](https://www.qgis.org). This website uses *QGIS* within the sections on [geospatial programming with *Python*](../geopy/geo-python) and [numerical modelling with the ETH Zurich's BASEMENT](../numerics/basement) software.
 
 ### Install QGIS on Windows
 Download and install the latest version of [*QGIS*](https://www.qgis.org/en/site/forusers/download.html) for Windows.
@@ -40,10 +41,10 @@ Download and install the latest version of [*QGIS*](https://www.qgis.org/en/site
 
 ### Learn QGIS
 Working with geospatial data editors involves complex tasks that require background knowledge before intuitive comprehension is possible.  The *QGIS* developers provide compound [tutorials on their website](https://docs.qgis.org/testing/en/docs/training_manual/index.html) ([also available in other languages including Czech, French, German, and Portuguese](https://www.qgis.org/en/site/forusers/trainingmaterial/index.html)).
-On this website, *QGIS* is occasionally used for plotting and creating georeferenced data (e.g., the chapters on [geospatial programming](geo-python-basics/python.html) and [numerical modelling *BASEMENT*](bm-pre.html)). These chapters illustrate the usage of *QGIS* with screenshots for specific tasks and do not cover a full tutorial for working with *QGIS*.
+On this website, *QGIS* is occasionally used for plotting and creating georeferenced data (e.g., the chapters on [geospatial programming](../geopy/geo-python) and [numerical modelling *BASEMENT*](../numerics/basement)). These chapters illustrate the usage of *QGIS* with screenshots for specific tasks and do not cover a full tutorial for working with *QGIS*.
 
-
-### Basemaps for QGIS (google, open street maps and more) {#basemap}
+(basemap=
+### Basemaps for QGIS (Google, Open Street Maps and More)
 ```{note}
 A fast internet connection is required for adding online base maps.
 ```
@@ -81,7 +82,8 @@ conda create  -c conda-forge -n qgiscube python=3.6 qgis=3 datacube
 conda activate qgiscube
 ```
 
-### Get Useful Plugins <a name="plugins"></a>
+(plugins)=
+### Get Useful Plugins
 
 The conversion between geospatial data types and numerical (computational) grids can be facilitated with plugins. To install any plugin in *QGIS*, go to the `Plugins` menu > `Manage and Install Plugins...` > `All` tab > `Search...` for a relevant plugin and install it.
 
@@ -89,26 +91,31 @@ In the context of river analysis, the following plugins are recommended and used
 
 * The *Crayfish* plugin, which is available in the *QGIS* toolbox after the installation.
 
-### Enable the QGIS Toolbox <a name="qgis-tbx"></a>
+(qgis-tbx-install)=
+### Enable the QGIS Toolbox
 
 Follow the below illustrated instructions to enable the *QGIS* *Toolbox*.
 
 ```{figure} ../img/qgis-tbx.png
 :alt: enable QGIS toolbox
+:name: qgis-tbx-fig
 
 Open QGIS' Toolbox window from the main menu.
 ```
 
 
+(agis)=
+## ArcGIS Pro
 
-## ArcGIS Pro {#agis}
 ```{attention}
 ArcGIS Pro is designed for Windows and will not run on macOS or Linux. In addition, a license needs to be purchased.
 ```
-The proprietary software *ArcGIS Pro* represents a powerful tool for any kind of geospatial analysis including web applications. *ArcGIS Pro* is maintained by [esri](https://www.esri.com/) and comes with an own [*Python conda Environments*](../python-basics/pyinstall.html).
+
+The proprietary software *ArcGIS Pro* represents a powerful tool for any kind of geospatial analysis including web applications. *ArcGIS Pro* is maintained by [esri](https://www.esri.com/) and comes with an own [*Python conda Environments*](../python-basics/pyinstall).
 With the focus on freely available software, the usage of *ArcGIS Pro* and its *Python* environment including the `arcpy` package is just mentioned on this website.
 
-## Others {#others}
+(others)=
+## Others
 There are many other tools for geospatial analyses, which all deserve much more than just being mentioned here. Alas, for practical reasons, this website focuses on the usage of *QGIS*. This is why there is just a absolutely-not-complete list of other GIS tools here:
 
 * [SAGA (System for Automated Geoscientific Analyses)](http://www.saga-gis.org/en/index.html)
@@ -116,6 +123,6 @@ There are many other tools for geospatial analyses, which all deserve much more 
 * [Mapbox](https://www.mapbox.com/)
 * [uDig](http://udig.refractions.net/)
 
-## Geospatial analyses
+## Geospatial Analyses
 
-Geospatial analyses involve efficient code practices (e.g., with *Python*) and this is why detailed descriptions of geospatial data handling are embedded in the [*Python<sup>geospatial</sup>*](geo-python-basics/python.html) chapter of this website.
+Geospatial analyses involve efficient code practices (e.g., with *Python*) and this is why detailed descriptions of geospatial data handling are embedded in the [*Python<sup>geospatial</sup>*](../geopy/geo-python) chapter of this website.

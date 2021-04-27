@@ -1,11 +1,11 @@
-# Manning-Strickler formula
+# 1d Hydraulics (Manning-Strickler Formula)
 
 ```{admonition} Goals
 Write basic script and use loops. Write a function and parse optional keyword arguments (`**kwargs`).
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *math* (standard library). Read and understand how [loops](../python-basics/pypyloop.html) and [functions](../python-basics/pypyfun.html) work in *Python*.
+*Python* libraries: *math* (standard library). Read and understand how [loops](../python-basics/pyloop) and [functions](../python-basics/pyfun) work in *Python*.
 ```
 
 Get ready by cloning the exercise repository:
@@ -14,11 +14,15 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-ManningStrickler.git
 ```
 
-![rhone](https://github.com/Ecohydraulics/media/raw/master/jpg/hydraulics-1d.jpg)<br>
-*<sub>The Rhone River in Switzerland (source: Sebastian Schwindt 2014).</sub>*
+```{figure} https://github.com/Ecohydraulics/media/raw/master/jpg/hydraulics-1d.jpg
+:alt: Rhone Switzerland Pfynnwald
+:name: rhone
+
+The Rhone River in Switzerland (source: Sebastian Schwindt 2014).
+```
 
 
-## The theory
+## Theory
 The [*Gauckler-Manning-Strickler formula*](https://en.wikipedia.org/wiki/Manning_formula) (or *Strickler formula* in Europe) relates water depth and flow velocity of open channel flow based on the assumption of one-dimensional (cross-section-averaged) flow characteristics. The *Strickler formula* results from a heavy simplification of the [*Navier-Stokes*](https://en.wikipedia.org/wiki/Navier-Stokes_equations) and the [*continuity*](https://en.wikipedia.org/wiki/Continuity_equation) equations. Even though one-dimensional (1D) approaches have largely been replaced by at least two-dimensional (2D) numerical models today, the 1D Strickler formula is still frequently used as a first approximation for boundary conditions.
 
 The basic shape of the *Strickler formula* is:<br>
@@ -38,7 +42,10 @@ where:
 
 The hydraulic radius *R<sub>h</sub>* is the ratio of wetted area *A* and wetted perimeter *P*. Both *A* and *P* can be calculated as a function of the water depth *h* and the channel base width *b*. Many channel cross-sections can be approximated with a trapezoidal shape, where the water surface width *B*=*b+2·h·m* (with *m* being the bank slope as indicated in the figure below).
 
-![FlowCrossSection](https://github.com/Ecohydraulics/media/raw/master/png/flow-cs.png)
+```{figure} https://github.com/Ecohydraulics/media/raw/master/png/flow-cs.png
+:alt: 1d hydraulics parameters
+:name: 1d-cross-section
+```
 
 Thus, *A* and *P* result from the following formulas:
 
@@ -61,7 +68,7 @@ Use `import math as m` to calculate square roots (`m.sqrt`). Powers are calculat
 Cast the calculation into a function (e.g., `def calc_discharge(b, h, k_st, m, S): ...`) that returns the discharge *Q*.
 
 ## Flexibilize
-Make the function more flexible through the usage of optional keywords arguments ([`**kwargs`](../python-basics/pypyfun.html#keyword-arguments-kwargs) so that a user can optionally either provide the *D<sub>90</sub>* (`D90`), the *Strickler* coefficient *k<sub>st</sub>* (`k_st`), or *Manning's n* (`n_m`)
+Make the function more flexible through the usage of optional keywords arguments ([`**kwargs`](../python-basics/pyfun.html#keyword-arguments-kwargs) so that a user can optionally either provide the *D<sub>90</sub>* (`D90`), the *Strickler* coefficient *k<sub>st</sub>* (`k_st`), or *Manning's n* (`n_m`)
 
 ```{tip}
 Internally, use only *Manning's n* for the calculations and parse `kwargs.items()` to find out the `kwargs` provided by a user.

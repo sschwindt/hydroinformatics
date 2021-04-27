@@ -16,7 +16,7 @@ This tutorial uses *BASEMENT*'s *BASEplane* module (version 3.0.2) to perform a 
 (prepro)=
 ## Pre-processing: Mesh Generation
 
-Prepare a `2dm` mesh file as described in the [QGIS data pre-processing](../numerics/qgis-prepro.html) section.
+Prepare a `2dm` mesh file as described in the [QGIS data pre-processing](../numerics/pre-qgis) section.
 
 (simulate)=
 ## Steady 2d Simulation with BASEMENT
@@ -62,7 +62,7 @@ Region definitions.
     * `upstream_direction` = `right`
 
 ```{note}
-If you used [BASEmesh’s *Stringdef* tool](../numerics/qgis-prepro.html#stringdef), the upstream direction must be defined as `right`.
+If you used [BASEmesh’s *Stringdef* tool](../numerics/pre-qgis.html#stringdef), the upstream direction must be defined as `right`.
 ```
 
 - Add the initial condition in the `HYDRAULICS` section with by right-clicking > `Add item` > `INITIAL` (if not yet present) and set `type`: “DRY” (i.e., the river is dry at the beginning of the simulation).<a name="init"></a>
@@ -135,7 +135,7 @@ The Simulation tab setup. In order to export results with *BASEMENT*’s Python 
 
 ### Run the simulation
 After the successful simulation setup, select an appropriate `Number of CPU cores` (bottom-right in the above figure). If a high-quality graphics card with a powerful GPU is available, the GPU (high-performance hardware) has a much faster performance. Otherwise (no powerful GPU available), do not select GPU because it may significantly slow down the simulation speed.
-For faster simulations, select `Single` precision (bottom-right in the above figure), but in this example, `Double` precision will work sufficiently fast as well. Click on the `Run` button to start the simulation and wait for approximately 2-10 minutes. *BASEMENT* will prompt the simulation progress, while the `Error Output` canvas should remain white (see {numref}`Fig. %s <bm-sim-end)). If any error occurs, go back to the above sections (or even to the mesh generation) and fix error message issues.
+For faster simulations, select `Single` precision (bottom-right in the above figure), but in this example, `Double` precision will work sufficiently fast as well. Click on the `Run` button to start the simulation and wait for approximately 2-10 minutes. *BASEMENT* will prompt the simulation progress, while the `Error Output` canvas should remain white (see {numref}`Fig. %s <bm-sim-end>`)). If any error occurs, go back to the above sections (or even to the mesh generation) and fix error message issues.
 
 
 ```{figure} ../img/bm-sim-end.png
@@ -158,8 +158,8 @@ Export results after successful simulation.
 
 *BASEMENT*’s developers at the ETH Zurich provide a suite of [Python scripts](http://people.ee.ethz.ch/~basement/baseweb/download/tools/python-scripts/) for post-processing the simulation results. Here, we need the Python script [BMv3NodestringResults.py](http://people.ee.ethz.ch/~basement/baseweb/download/tools/python-scripts/BMv3NodestringResults.py) ([click to download](http://people.ee.ethz.ch/~basement/baseweb/download/tools/python-scripts/BMv3NodestringResults.py)).
 
- To run the Python script, a Python3 installation with the `numpy` and `h5py` packages is required. To learn more about the installation and usage of Python, have a look at the [instructions on this website to install Python](../python-basics/pyinstall.html).
-Note that working with the provided Python file requires that the output variables must be exactly defined as shown in {numref}`Fig. %s <bm-sim-set>`) of *BASEMENT*’s `SIMULATION` tab.
+To run the Python script, a Python3 installation with the `numpy` and `h5py` packages is required. To learn more about the installation and usage of Python, have a look at the instructions to [install Python](../python-basics/pyinstall).
+Note that working with the provided Python file requires that the output variables must be exactly defined as shown in {numref}`Fig. %s <bm-sim-se>` (**BASEMENT*’s `SIMULATION` tab).
 
 
 ## Post-processing with ParaView
@@ -187,7 +187,7 @@ All available time steps are listed in the Blocks tab (bottom-left in Figure 1).
 ### Export Visualizations
 
 The animations can be saved as movie (e.g., `avi`) or image (e.g., `jpg`, `png`, `tiff`) files via `File` > `Save Animation...`.
-The current state (variable, `Timestep[i])` can be saved as `pvsm` file via `File` > `Save State File`. The state file can also be saved as Python script for external execution and implementation in [Python programs](hy-install.html).
+The current state (variable, `Timestep[i])` can be saved as `pvsm` file via `File` > `Save State File`. The state file can also be saved as Python script for external execution and implementation in [Python programs](../python-basics/pypckg.html#stand-alone).
 
 (exp-data)=
 ### Export Data
@@ -258,7 +258,7 @@ The Data Source Manager | Delimited Text window with required settings highlight
 ### Use the `results.xdmf` file directly (**recommended for geospatial data conversion**)
 
 Modify `results.xdmf` and directly import model result in *QGIS*:
-- Open `results.xdmf` in a text editor (e.g., [*Notepad++*](hy_get-started/others.html#npp)
+- Open `results.xdmf` in a text editor (e.g., [*Notepad++*](../get-started/others.html#npp)
 - Use the find-and-replace tool (`CTRL` + `H` keys in *Notpad++*) to remove file paths before `results_aux.h5` in the document (otherwise *QGIS* will crash later on - [read more in *BASEMENT*'s User Forum](http://people.ee.ethz.ch/~basement/forum/viewtopic.php?id=5261)).
 - For example: `Find what` = `C:/temp/results_aux.h5` (pay attention to use `/` rather than `\`) and `Replace with` = `results_aux.h5` (see [below figure](#npp-xdmf-replace)). After having removed all path occurrences in the document, save and close `results.xdmf`.
 
@@ -268,7 +268,7 @@ Modify `results.xdmf` and directly import model result in *QGIS*:
 
 Find the string results_aux.h5 in results.xdmf and remove the file directories.
 ```
-- If not yet done, load the mesh file (here: [`finalmesh.2dm`](../numerics/qgis-prepro.html#2dm) by clicking on *QGIS*' `Layer` menu > `Data Source Manager` > `Mesh` tab and select `finalmesh.2dm`.
+- If not yet done, load the mesh file (here: [`finalmesh.2dm`](../numerics/pre-qgis.html#2dm) by clicking on *QGIS*' `Layer` menu > `Data Source Manager` > `Mesh` tab and select `finalmesh.2dm`.
 - In *QGIS*' `Layers` window, double-click on the `finalmesh` layer to open the `Layer Properties` window.
 - In the `Layer Properties` window, go to `Source` > click on `Assign Extra Data Set to Mesh` and choose  `results.xdmf`
 
@@ -387,7 +387,7 @@ The Rasterize (Vector to Raster) window with required settings highlighted (gree
 ```
 
 ```{tip}
-Facilitate the conversion of geospatial data with efficient *Python* algorithms (see the [geospatial *Python*](geo-python-basics/python.html) section). Many *Python* conversion routines are also efficiently accessible and tailored for river analysis in the [*flusstools*](https://flusstools.readthedocs.io/) package.
+Facilitate the conversion of geospatial data with efficient *Python* algorithms (see the [geospatial *Python*](../geopy/geo-python) chapter). Many *Python* conversion routines are also efficiently accessible and tailored for river analysis in the [*flusstools*](https://flusstools.readthedocs.io/) package.
 ```
 
 ## Result interpretation
@@ -398,4 +398,4 @@ In *ParaView* (renders faster) or *QGIS*, look at all variables (`flow_velocity`
 - Are there particularities such as rapids that correspond (qualitatively) to field observations (are rapids on confinements and/or terrain drops)?
 - Zoom into the [final *tif* raster](#qgis-crayfish-final) and have a look at the triangulation artifacts. The artifacts are not realistic. How can the problem be addressed?
 
-After post-processing, the model still needs to be [calibrated and validated](../numerics/calibration.html) before it can be used for scientific or engineering purposes in river ecosystem analyses.
+After post-processing, the model still needs to be [calibrated and validated](../numerics/calibration) before it can be used for scientific or engineering purposes in river ecosystem analyses.

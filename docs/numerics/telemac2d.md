@@ -5,7 +5,7 @@
 Thank you for your patience.
 
 ```{admonition} Requirements
-The case featured in this tutorial was established with: <br><br>**- [*BlueKenue* v3.12](../get-started/telemac.html#sbluekenue)** (on *Windows*)<br>**- [*QGIS v3.16*](../get-started/geo.html#qgis)** (tested on *Windows* and **Debian 10 Linux*),<br>**- [*Fudaa PrePro v1.4*](../get-started/telemac.html#fudaa)** (tested on *Windows* and **Debian 10 Linux*), and <br>**- [*TELEMAC* v8p2r0](../get-started/telemac.html#modular-install)** (stand-alone installation on *Debian 10 Linux*).
+The case featured in this tutorial was established with: <br><br>**- [*BlueKenue* v3.12](../get-started/install-telemac.html#sbluekenue)** (on *Windows*)<br>**- [*QGIS v3.16*](../get-started/geo.html#qgis)** (tested on *Windows* and **Debian 10 Linux*),<br>**- [*Fudaa PrePro v1.4*](../get-started/install-telemac.html#fudaa)** (tested on *Windows* and **Debian 10 Linux*), and <br>**- [*TELEMAC* v8p2r0](../get-started/install-telemac.html#modular-install)** (stand-alone installation on *Debian 10 Linux*).
 ```
 
 This tutorial uses descriptions provided in the [telemac2d](http://ot-svn-public:telemac1*@svn.opentelemac.org/svn/opentelemac/tags/v8p1r1/documentation/telemac2d/user/telemac2d_user_v8p1.pdf) user manual.
@@ -18,7 +18,7 @@ For any TELEMAC 2D simulation, the following files are mandatory:
 
 * Steering file
     + File format: `cas`
-    + Prepare either with [Fudaa PrePro](https://fudaa-project.atlassian.net/wiki/spaces/PREPRO/pages/253165587/How+to+launch+Fudaa-Prepro) or [*BlueKenue<sup>TM</sup>*](../get-started/telemac.html#bluekenue).
+    + Prepare either with [Fudaa PrePro](https://fudaa-project.atlassian.net/wiki/spaces/PREPRO/pages/253165587/How+to+launch+Fudaa-Prepro) or [*BlueKenue<sup>TM</sup>*](../get-started/install-telemac.html#bluekenue).
 * Geometry file
     + File format: `.slf` ([selafin](https://gdal.org/drivers/vector/selafin.html)
     + Prepare either with
@@ -88,13 +88,13 @@ TM solves the (depth-averaged) Navier Stokes equations along a computational gri
 
 ## Geometry File Option 2: QGIS & BASEMESH
 
-Follow the instructions in the [QGIS data pre-processing](../numerics/qgis-prepro.html) section for creating a .2dm file.
+Follow the instructions in the [QGIS data pre-processing](../numerics/pre-qgis) section for creating a .2dm file.
 
 Then...
 
 
-
-## Model setup with Fudaa Prepro {#prepro-fudaa}
+(prepro-fudaa)=
+## Model setup with Fudaa Prepro
 
 *Fudaa PrePro* facilitates the definition of boundaries, initial conditions, and setting up a steering file. To start *Fudaa*, open *Terminal* (*Linux*) or *Command Prompt* (*Windows*) and:
 
@@ -106,7 +106,7 @@ Then...
 
 ## Boundary Conditions
 
-The boundary file in *cli* format contains information about inflow and outflow nodes (coordinates and IDs). The *cli* file can be opened and modified with any text editor, which is not recommended to avoid inconsistencies. Preferably use [*Fudaa-PrePro*](../get-started/telemac.html#fudaa) or [*BlueKenue*](../get-started/telemac.html#bluekenue) for generating and/or modifying *cli* files.
+The boundary file in *cli* format contains information about inflow and outflow nodes (coordinates and IDs). The *cli* file can be opened and modified with any text editor, which is not recommended to avoid inconsistencies. Preferably use [*Fudaa-PrePro*](../get-started/install-telemac.html#fudaa) or [*BlueKenue*](../get-started/install-telemac.html#bluekenue) for generating and/or modifying *cli* files.
 
 In addition, users can define a liquid boundary conditions file (*qsl*) to define time-dependent boundary conditions (e.g., discharge, water depth, flow velocity or tracers).
 

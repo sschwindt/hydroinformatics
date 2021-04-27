@@ -1,3 +1,4 @@
+(install-python)=
 # Install Python
 
 *Python*'s two-fold development (*Python2* and *Python3*) and other parallel versions of *Python* (e.g., ESRI's ArcGIS or Nvidia's cuda *Python* versions) may cause that multiple versions of *Python* are installed on your computer (even though *Python2* is about to disappear). As a consequence packages might have been unintentionally or unknowingly installed for another *Python* than used for a project. However, the parallel existence of multiple *Python* interpreters that may access packages may be beneficial (e.g., when packages are installed that are not compatible with each other). So, how to **deal with the challenge of having multiple *Python* interpreters (or environments) installed?**
@@ -8,9 +9,10 @@
 Before you continue, **make sure that *Anaconda* or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) is installed** according to the [descriptions in the *Get Started*](../get-started/ide.html#anaconda) section.
 ```
 
-## Conda environments {#conda-env}
+(conda-env)=
+## Conda Environments
 
-### Create and install
+### Create and Install
 
 To create a new *conda* environment, open *Anaconda Prompt* and type (replace `ENV-NAME` for example with `hypy`):
 
@@ -29,15 +31,16 @@ An alternative (and recommended for the tutorials on this page) option is to ins
 The provided [environment.yml](https://github.com/hydro-informatics/materials-py-install/blob/master/environment.yml) file creates a carefree environment for using *Python* as described on this website. Still, you may want to create your own environment and use this section refresh your mind for installing any missing libraries.
 ```
 
-### Activate an environment
+### Activate Environment
 
 The active environment corresponds to the environment that you are working in (e.g., for installing libraries or using *Jupyter*). To activate the above-created *hypy* environment:
 
 1. Open *Anaconda Prompt* (`Windows` key or click on the start menu of your operating system > type `Anaconda Prompt` > hit `Enter`).
 1. Activate the *hypy* environment with `conda activate hypy`
 
+(install-pckg)=
+### Install Additional *Python* Packages
 
-### Install additional *Python* packages in a *conda* environment {#install-pckg}
 To install more [*Python* packages](../python-basics/pypckg.html):
 
 1. Activate the environment where you want to install, remove, or modify packages (e.g., `conda activate hypy` - see above).
@@ -45,7 +48,7 @@ To install more [*Python* packages](../python-basics/pypckg.html):
 
 Alternatively, press the `Windows` key (or click on the start menu of your operating system) > type `Anaconda Navigator` > got to the `Environments` tab > select the `hypy` environment (or create another environment) > *install* > install packages.
 
-### Remove (delete) an environment
+### Remove (Delete) Environment
 To remove a conda environment open *Anaconda Prompt* and type:
 
 ```
@@ -64,7 +67,7 @@ There are many more `conda` commands and the most important ones are summarized 
 
 To follow the course content and run code cells, it is recommended to use [*JupyterLab*](../get-started/ide.html#jupyter). To create projects, develop programs, or simply to complete course assignments, it is recommended to use an Integrated Development Environment (*IDE*) such as [*PyCharm*](../get-started/ide.html#pycharm).
 
-### *JupyterLab*
+### JupyterLab
 
 The descriptions on the *Get started* for installing and launching [*JupyterLab*](../get-started/ide.html#jupyter), where *Jupyter* notebooks (*.ipynb* files), *Python* scripts (*.py* files), folders and more can be created from the *File* menu.
 
@@ -114,8 +117,9 @@ from gdal import osr
 The `default_profile` is part of the default *Jupyter* installation and it is normally not necessary to create it manually. The [*IPython* docs](https://ipython.org/ipython-doc/stable/config/intro.html) provide more detail about custom settings and modifying profiles on any platform.
 ```
 
+(ide-setup)=
+### PyCharm
 
-### *PyCharm* {#ide-setup}
 After the successful installation of [*PyCharm*](../get-started/ide.html#ide) within *Anaconda*, use the just created *conda* environment as interpreter. The following steps guide through the setup of *PyCharm* for using *conda* environments.
 
 1. Launch *PyCharm* and create a new project.

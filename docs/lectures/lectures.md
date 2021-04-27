@@ -1,6 +1,5 @@
 # Lectures and exercises
 
-
 ## Lectures in the virtual classroom
 
 The majority of the courses take place in front of a screen in the form of video conferences, video streaming, wiki-like documentation, or interactive exercises.
@@ -10,7 +9,7 @@ During virus-free times, computers are available to students directly on campus.
 Students of the University of Stuttgart may want to explore the [TIK's GitHub account and login page](https://github.tik.uni-stuttgart.de/login) (use your institutional ID, for example, `st9009133`) to leverage collaborative work with code.
 ```
 
-The codes created and provided in the lectures are mostly based on *Python3* *conda* environments. The [Get started](../get-started/git.html) chapter and the [install and setup](../python-basics/pyinstall.html) section provides more details and installation hints regarding required software (preferred open-access).
+The codes created and provided in the lectures are mostly based on *Python3* *conda* environments. The [Get started](../get-started/git) chapter and the [install and setup](../python-basics/pyinstall) section provides more details and installation hints regarding required software (preferred open-access).
 
 ## Exercises
 
@@ -38,18 +37,18 @@ To ensure adequate support for every student, the number of participants is limi
 The paramount requirement is the willingness to regularly invest time in the lectures, because this course is about more than just learning a programming language.
 Previous programming experience is not necessary and the course also and explicitly addresses students who have not yet made use of programming tools.
 
-In terms of software, make sure to install (or having installed on any accessible computer) the following programs described in the [Get started](../get-started/ide.html) chapter:
+In terms of software, make sure to install (or having installed on any accessible computer) the following programs described in the [Get started](../get-started/ide) chapter:
 
 * [Anaconda](../get-started/ide.html#anaconda) with its *Anaconda Navigator* and *Anaconda Prompt* interfaces.
 * [PyCharm](../get-started/ide.html#pycharm), *Spyder* or any equivalent *Python* IDE.
 * [JupyterLab](../get-started/ide.html#jupyter) to edit jupyter notebooks.
 * Ensure that [git is installed](../get-started/git.html#dl), and thus, can be understood by your system's command line or terminal.
-* [QGIS](../get-started/geo.html) aids to visualize geospatial datasets used and created in the [Python<sup>geospatial</sup>](geo-python-basics/python.html) chapter (not mandatory).
-* [Libre Office](hy_get-started/others.html#lo) (or any other software) to edit workbooks (not mandatory).
-* [Notepad++](hy_get-started/others.html#npp) to get a clean and quick overview of many script and text-based data file types (not mandatory).
+* [QGIS](../get-started/geo) aids to visualize geospatial datasets used and created in the [Python<sup>geospatial</sup>](../geopy/geo-python) chapter (not mandatory).
+* [Libre Office](../get-started/others.html#lo) (or any other software) to edit workbooks (not mandatory).
+* [Notepad++](../get-started/others.html#npp) to get a clean and quick overview of many script and text-based data file types (not mandatory).
 
-### Schedule (winter 2020/21)
-Every Wednesday and Thursday morning live in *WebEx*, starting from November 4, 2020, through February 11, 2021.
+### Schedule (Winter 2021/22)
+Every Wednesday and Thursday morning live in *WebEx*, starting from October/November, 2021, through February, 2022.
 
 
 ```{note}
@@ -77,7 +76,7 @@ Beyond the descriptions provided in documents along with the exercises, these de
 
 Make sure to install (or having installed on any accessible computer) the following programs:
 
-* [QGIS](../get-started/geo.html) aids to visualize and modify (edit) geospatial datasets. Add the [BASEmesh](bm-pre.html#get-ready-with-qgis) and [Crayfish](bm-post.html#add-the-crayfish-plugin) plugins.
+* [QGIS](../get-started/geo) aids to visualize and modify (edit) geospatial datasets. Add the [BASEmesh](bm-pre.html#get-ready-with-qgis) and [Crayfish](bm-post.html#add-the-crayfish-plugin) plugins.
 * [Notepad++](hy_get-started/others.html#npp) to modify boundary conditions and text-alike data file types.
 * [ParaView](bm-post.html#visualize-results-with-paraview) is a powerful visualization tool for model outputs (not mandatory).
 * [Libre Office](hy_get-started/others.html#lo) (or any other software) to edit workbooks (not mandatory).

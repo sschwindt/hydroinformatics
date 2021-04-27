@@ -2,11 +2,11 @@
 
 
 ```{admonition} Goals
-This exercise features the creation of a Graphical User Interface based on the [course instructions](python-basics/pygui.html).
+This exercise features the creation of a Graphical User Interface based on the [course instructions](../python-basics/gui).
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *tkinter*, *numpy*, and *pandas*. Read and understand the [creation of GUIs](python-basics/pygui.html). Accomplish the [sediment transport exercise](https://github.com/Ecohydraulics/Exercise-SedimentTransport).
+*Python* libraries: *tkinter*, *numpy*, and *pandas*. Read and understand the [creation of GUIs](../python-basics/gui). Accomplish the [sediment transport exercise](https://github.com/Ecohydraulics/Exercise-SedimentTransport).
 ```
 
 Get ready by cloning the exercise repository:
@@ -15,7 +15,10 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-gui.git
 ```
 
-![gui](../img/hello-gui.png)
+```{figure} ../img/hello-gui.png
+:alt: graphical user interface illustration
+:name: hello-gui
+```
 
 Before getting started with the exercise, make sure to copy the code from the [sediment transport exercise](https://github.com/Ecohydraulics/Exercise-SedimentTransport) into the `sediment_transport` sub-folder of the GUI exercise repository (i.e., overwrite *bedload.py*, *fun.py*, *grains.py*, *hec.py*, *.py*, *main.py*, and *mpm.py* with your code). If the file names are different from the default names used in the sediment transport exercise, adapt the `__init__.py` file in the `sediment_transport` sub-folder. Thus, we created a module called `sediment_transport`, where the `main.py` file requires some modifications.
 

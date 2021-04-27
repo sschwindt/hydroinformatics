@@ -2,7 +2,7 @@
 
 The teaching contents on this website build on so-called *Application Programming Inferace*s (*API*s) and *Integrated Development Environment*s (*IDE*s).<br>
 An ***API*** represents a computing interface that enables interactions between multiple software intermediaries. Modular programming becomes easy with an *API*, because it systematically hides complex information that is not necessarily needed to write code according to industry standards. For instance, an *API* can define the interface between an application (such as *Python* or *Word*) and an *Operating System* (*OS*) such as *Windows*, *Linux*, or *macOS*.<br>
- An ***IDE*** enables the definition of a project to use for example a specific [*Python Conda Environment*](https://docs.conda.io/) and it enables robust coding by pointing out issues directly in the code, even before it was executed once. Powerful *IDE*s go even further and provide assistance in documenting code with markdown (*.md* files) and direct pipes into *git* ([see section on the usage of *git*](../get-started/git.html)).
+ An ***IDE*** enables the definition of a project to use for example a specific [*Python Conda Environment*](https://docs.conda.io/) and it enables robust coding by pointing out issues directly in the code, even before it was executed once. Powerful *IDE*s go even further and provide assistance in documenting code with markdown (*.md* files) and direct pipes into *git* ([see section on the usage of *git*](../get-started/git)).
 
 ```{note}
 These pages are written with the web-based *IDE* [*JupyterLab*](https://jupyter.org/), which is suitable to follow the course contents. *IDE*s such as *PyCharm* or *Spyder* are more suitable to setup projects locally (e.g., for course assignments).
@@ -50,7 +50,7 @@ After the installation of *PyCharm* for *Anaconda*, open *Anaconda Navigator*:
     - *Project Interpreter* - Check the `Existing interpreter` box and select the above-installed [conda environment   `hypy`  ](../python-basics/pyinstall.html#conda-env) (e.g., `C:\users\<your-user-name>\AppData\Local\Continuum\anaonda3\envs\`)
     - Click on the `Create` button.
 
-All set - you are ready to work with *Python*, markdown (documentation), and [git](../get-started/git.html).
+All set - you are ready to work with *Python*, markdown (documentation), and [git](../get-started/git).
 
 ```{note}
 ***Python* users** read more about setting up *conda* environments on the [*Python (basics)*](../python-basics/pyinstall.html#ide-setup) page.
@@ -69,8 +69,9 @@ The *Jupyter* kernels support the three core programming languages **Ju**lia, **
 1. After successful installation, open *JupyterLab*, by clicking on the *Launch* button.
 1. *JupyterLab* opens in the default web browser, where *Jupyter* notebooks (*.ipynb*) or *Python* files can be created and edited.
 
-```{tip}
-Get familiar with *JupyterLab*, by creating files, adding new *Markdown* or *Python* cells and `Run`ning cells. The essentials of *markdown* are explained on the [Markdown and Documentation](../get-started/documentation.html#markdown) page (short read). Learning *Python* is more than a short read and the [*Python* (basics)](../python-basics/python.html) walks you through the course contents to learn *Python* (takes time).
+```{admonition} Working with Jupyter
+:class: tip, dropdown
+Get familiar with *JupyterLab*, by creating files, adding new *Markdown* or *Python* cells and `Run`ning cells. The essentials of *markdown* are explained on the [Markdown and Documentation](../get-started/documentation.html#markdown) page (short read). Learning *Python* is more than a short read and the [*Python* (basics)](../python-basics/python) walks you through the course contents to learn *Python* (takes time).
 ```
 
 ```{note}
@@ -78,7 +79,7 @@ Get familiar with *JupyterLab*, by creating files, adding new *Markdown* or *Pyt
 ```
 
 
-### Via *Anaconda Prompt*
+### Via Anaconda Prompt
 
 Open *Anaconda Prompt*, which represents a *Terminal* window with black background and a blinking cursor.
 
@@ -86,7 +87,7 @@ If you are working with *Miniconda*, install the *Jupyter Notebook* app by typin
 
 To start the *JupyterLab* app and open, create, or modify *Jupyter* notebooks, type `jupyter lab` (`jupyter notebook` for *Jupyter Notebook*) in *Anaconda Prompt (Miniconda3)* and hit *Enter*. The *Jupyter Notebook* application will open in the default webbrowser.
 
-### Extensions and spellchecker
+### Extensions and Spellchecker
 
 Many additional features for *JupyterLab* are available through [*nbextensions*](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html), which can be installed through *Anaconda Prompt*:
 

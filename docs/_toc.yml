@@ -19,9 +19,9 @@
 - part: Python Basics
   chapters:
   - file: python-basics/python
-  - file: python-basics/pyinstall
-  - file: python-basics/pybase
     sections:
+    - file: python-basics/pyinstall
+    - file: python-basics/pybase
     - file: python-basics/pyerror
     - file: python-basics/pyloop
   - file: python-basics/modularize
@@ -33,7 +33,7 @@
     sections:
     - file: python-basics/pynum
     - file: python-basics/xml
-  - file: python-basics/pyplot
+    - file: python-basics/pyplot
   - file: python-basics/pystyle
   - file: python-basics/gui
   - file: exercises/python-exercises

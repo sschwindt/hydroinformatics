@@ -3,10 +3,11 @@
 This page lists open-source packages for geospatial file manipulation with *Python*. The necessary packages are already installed if you use the provided [`hypy`](../python-basics/pyinstall.html#create-and-install-conda-environments) environment. The following sections provide explanations of relevant and optional packages for this course and how those can be installed.
 
 ```{hint}
-The proprietary license-requiring `arcpy` package is described on the [Commercial software](../geopy/geo-arcpy.html) page.
+The proprietary license-requiring `arcpy` package is described on the [Commercial software](../geopy/geo-arcpy) page.
 ```
 
-## gdal (including ogr and osr) {#gdal}
+(gdal)=
+## gdal (including ogr and osr)
 [`gdal`](https://gdal.org/) and `ogr` of the [OSGeo Project](http://www.osgeo.org/) stem from the *GDAL* project, which is part of the Open Source
 Geospatial Foundation ([*OSGeo*](https://www.osgeo.org) -  the developers of *QGIS*. `gdal` provides many methods to convert geospatial data (file types, projections, derive geometries), where `gdal` itself handels [raster data](../geopy/geospatial-data.html#raster) and its `ogr` module handles [vector data](../geopy/geospatial-data.html#vector). The tutorials on this website depend on `gdal` and `ogr` (including `osr` for spatial referencing); so it is important to get the installation of `gdal` right.
 

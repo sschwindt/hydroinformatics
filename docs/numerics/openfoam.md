@@ -6,7 +6,7 @@
 Thank you for your patience.
 
 ```{admonition} Requirements
-Install [*OpenFOAM*](../get-started/install-openfoam.html) and [*SALOME-HYDRO*](../get-started/telemac.html#salome-hydro) or just [*SALOME*](../get-started/install-openfoam.html#salome) on *Debian* or an *Ubuntu* (deriative) *Linux* platform.
+Install [*OpenFOAM*](../get-started/install-openfoam) and [*SALOME-HYDRO*](../get-started/telemac.html#salome-hydro) or just [*SALOME*](../get-started/install-openfoam.html#salome) on *Debian* or an *Ubuntu* (deriative) *Linux* platform.
 ```
 
 This tutorial features the construction of a simple three-dimensional (3d) flume in *SALOME* and a hydrodynamic simulation with *OpenFOAM*.

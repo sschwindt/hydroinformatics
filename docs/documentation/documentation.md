@@ -46,7 +46,7 @@ Sure, your code is error-free and of course only the user makes mistakes. Show c
 
 ### Contributing
 
-Your software is brilliant. To make the software even more brilliant, foolproof, and powerful, it is a great idea (actually: an absolute must) to get more authors on the development team. However, it is very likely that any other author has individual preferences when it comes to code standards. So make sure to set up clear rules for other contributors from the beginning. For example, define clear code conventions as explained on the [code style](../python-basics/pystyle.html) page.
+Your software is brilliant. To make the software even more brilliant, foolproof, and powerful, it is a great idea (actually: an absolute must) to get more authors on the development team. However, it is very likely that any other author has individual preferences when it comes to code standards. So make sure to set up clear rules for other contributors from the beginning. For example, define clear code conventions as explained on the [code style](../python-basics/pystyle) page.
 
 
 ## Markdown
@@ -76,9 +76,9 @@ Your software is brilliant. To make the software even more brilliant, foolproof,
 
 Many text editors provide *Markdown* add-ons and *Markdown*-only editors are loosing their significance more and more. Editors that simultaneously support *Markdown* and programming languages like *Python* or *R* are state of the art and therefore recommended.
 
-Basic text editors that support *Markdown* are listed [here](../get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*JupyterLab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). [Read more about Anaconda and associated *IDE*s on the previous pages.](../get-started/ide.html)
+Basic text editors that support *Markdown* are listed [here](../get-started/others.html#npp). Popular and multi-platform *IDE*s for editing *Markdown* (`.md`) files are [*ATOM*](https://atom.io/) (for combination with *JavaScript*, *html*, and *CSS*), and [*JupyterLab*](https://jupyter.org) or [*PyCharm*](https://www.jetbrains.com/pycharm/) (for combination with *Python* or *R*), which both are available through [*Anaconda*](https://docs.conda.io/). Read more about Anaconda and associated *IDE*s on the [previous pages](../get-started/ide).
 
-### Markdown command overview (+images)
+### Markdown Command Overview and Image Implementation
 
 The following table and sections provide an overview of basic markdown commands. There is much more options out there, which you can find by using your favorite search engine with the keywords `markdown` `guide`.
 
@@ -100,7 +100,7 @@ The following table and sections provide an overview of basic markdown commands.
 | Reference (definition) | `[wiki]: https://wikipedia.org` |   *Place at file bottom*               |
 | Strikethrough | `~~Strikethrough~~ ` | ~~Strikethrough~~    |
 
-### Itemization (un-numbered list)
+### Itemization (Un-numbered Lists)
 
 Itemized list section can be produced using `*`, `+`, or `-` symbols with tabs that determine the list indentation:
 ```markdown
@@ -143,7 +143,7 @@ Table columns are separated by a `|` sign. The first row determines row headers 
 
 Converting complex tables from workbooks (e.g., from *LibreOffice Calc* or *MS Excel*) is possible with many online tools and here is just one example from Dave Johnson: [https://thisDaveJ.com](https://thisdavej.com/copy-table-in-excel-and-paste-as-a-markdown-table/).
 
-### Math expressions: Equations
+### Math Expressions: Equations
 
 Math expressions and equations must be implemented as text in standard *Markdown*. *GitHub*s markdown interpreter does not support many external *TeX*-like equation renderers for reasons of security. However, *GitHub* users can still render *TeX*-like equations with the following code:
 
@@ -154,10 +154,10 @@ This results in <img src="https://render.githubusercontent.com/render/math?math=
 
 Note that the equation starts after `math&math=`. Thus for using the math snippet in a document, copy and modify the following expression `<img src="https://render.githubusercontent.com/render/math?math=TYPE =  EQUATION HERE">`.
 
-### html - markdown
+### Html - Markdown
 *html* structures can be flawlessly used in *Markdown*, which itself is nothing else than simplified *html*. Therefore, any *html* structure can be used within markdown and the above-shown equation implementation already represents the first example for *html* usage in a *Markdown* document. The following sections provide an overview of some more or less frequently used *html* symbols that also work with *Markdown*.
 
-### Math expressions: Greek letters
+### Greek letters
 
 In order to use greek letters in inline text, use *html* language, where `&lettername;` produces the desired *Greek* letter symbol (e.g., type `&delta;` to output &delta; or `&Delta;` to output a capital letter &Delta;). The following table provides an overview of Greek letter symbols.
 
@@ -188,7 +188,7 @@ In order to use greek letters in inline text, use *html* language, where `&lette
 | &Psi;     | `&Psi;`     | &psi;     | `&psi;`     |
 | &Omega;   | `&Omega;`   | &omega;   | `&omega;`   |
 
-### Math expressions: Arrows and Operators
+### Arrows and Operators
 
 Arrows and operators can also be implemented as *html* symbols. The following table provides an overview.
 
@@ -236,24 +236,22 @@ Arrows and operators can also be implemented as *html* symbols. The following ta
 
 ## Wikis
 
-While every [*git*](../get-started/git.html) repository should at least contain a descriptive *README.md*, *wiki* s provide much more detail and guidance. Wikis are a convenient way to guide users with permanent side bars (such as the menu bar on this web site), help users to understand methods and codes, and collaborative coding with precise descriptions of scripts. *GitHub* users find options to activate *wiki*s in the *Settings* tab of a repository and the developers continue to improve *wiki* functions ([read more about *GitHub*'s wikis](https://help.github.com/en/github/building-a-strong-community/about-wikis)).
+While every [git](../get-started/git) repository should at least contain a descriptive *README.md*, *wiki* s provide much more detail and guidance. Wikis are a convenient way to guide users with permanent side bars (such as the menu bar on this web site), help users to understand methods and codes, and collaborative coding with precise descriptions of scripts. *GitHub* users find options to activate *wiki*s in the *Settings* tab of a repository and the developers continue to improve *wiki* functions ([read more about *GitHub*'s wikis](https://help.github.com/en/github/building-a-strong-community/about-wikis)).
 
-More sophisticated *wiki*s are available on the *Jekyll* themes web site (e.g., the [git-wiki theme](https://jekyll-themes.com/git-wiki/)). In order to use *Jekyll* themes, make sure to enable [*GitHub* pages](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site) (in the repository *Settings* tab) for the repository where you want to establish the *wiki* (this wiki-repository is typically another repository in order to describe a code-repository). Then, install the *Ruby development environment* and *Jekyll* (see [instructions on their website](https://jekyllrb.com/docs/) in order to access and build hundreds of themes for code and project documentation. Forked and locally adapted themes can then be *push*ed to a remote *wiki* repository using [git](../get-started/git.html).
+More sophisticated *wiki*s are available on the *Jekyll* themes web site (e.g., the [git-wiki theme](https://jekyll-themes.com/git-wiki/)). In order to use *Jekyll* themes, make sure to enable [*GitHub* pages](https://help.github.com/en/github/working-with-github-pages/creating-a-github-pages-site) (in the repository *Settings* tab) for the repository where you want to establish the *wiki* (this wiki-repository is typically another repository in order to describe a code-repository). Then, install the *Ruby development environment* and *Jekyll* (see [instructions on their website](https://jekyllrb.com/docs/) in order to access and build hundreds of themes for code and project documentation. Forked and locally adapted themes can then be *push*ed to a remote *wiki* repository using [git](../get-started/git).
 
 ```{tip}
 There are other git-pages and wiki host providers out there, such as [GitLab](https://gitlab.com/pages) or [plan.io](https://plan.io/knowledge-management/).
 ```
 
 ```{admonition} Exercise
-Get practice in markdown with the [markdown & git](../exercises/ex-git.html) exercise.
+Get practice in markdown with the [markdown and git](../exercises/ex-git) exercise.
 ```
 
 ## *reStructuredText*, *Sphinx* and readthedocs
 
-An alternative to markdown is [*reStructuredText*](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) that enables embedding *Python* *docstrings* ([read more in the code style conventions](../python-basics/pystyle.html) of any script or module with [*Sphinx*](https://www.sphinx-doc.org).
+An alternative to markdown is [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html) that enables embedding *Python docstrings* (read more about [code style conventions](../python-basics/pystyle)) in any script or module with [*Sphinx*](https://www.sphinx-doc.org).
 
 Without any *Python* or programming knowledge, it might be hard to get started with *Sphinx*. So make sure to understand *Python* basics and document any code with *docstrings*, at best using [*google style*](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html) formatting. Once you start documenting your first *Python* package, *google-style* *docstrings* will enable the fast generation of high-quality docs. Currently, one of the best options for partially auto-generating code documentations, for any programming language, is [*readthedocs*](https://readthedocs.org/), which builds on *Sphinx* and *reStructuredText*.
-
-
 
 [wiki]: https://wikipedia.org

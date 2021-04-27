@@ -5,7 +5,7 @@ The numerical simulation methods described on these pages use the freely availab
 
 ## Get Started
 
-It is strongly recommended to install [*Debian Linux*](https://www.debian.org/) or one of its derivatives for working with *TELEMAC* (see the [Virtual Machines (VMs)](../get-started/vm.html) section in the *Software* chapter). Then, proceed with the installation of [*TELEMAC*](../get-started/telemac.html). Account for approximately 2 hours to get ready with *TELEMAC*.
+It is strongly recommended to install [*Debian Linux*](https://www.debian.org/) or one of its derivatives for working with *TELEMAC* (see the [Virtual Machines (VMs)](../get-started/vm) section in the *Software* chapter). Then, proceed with the installation of [*TELEMAC*](../get-started/install-telemac). Account for approximately 2 hours to get ready with *TELEMAC*.
 
 
 ## General Introduction and Tutorial Guide
@@ -28,17 +28,17 @@ This page builds on descriptions provided in the [telemac2d](http://ot-svn-publi
 
 Pre-processing involves abstracting the river landscape into a computational grid (mesh) with boundary conditions. Many software tools can be used for this purpose and this website features two options for mesh generation and defining geometry boundary conditions:
 
-1. Use [*QGIS*](../get-started/geo.html#qgis) and the [*BASEmesh* plugin](pre-qgis.html#get-ready-with-qgis). The [*QGIS* Prepro option](pre-qgis.html) is convenient for creating geo-referenced 2D meshes and uses the pre-processing routines of [BASEMENT](../numerics/basement.html). So this is not an officially recommended version by the *TELEMAC* developers, but rather a home-brewed option on this website.
-1. Use the National Research Council Canada's [*Blue Kenue<sup>TM</sup>*](../get-started/telemac.html#bluekenue) GUI software. The [*Blue Kenue<sup>TM</sup>* Prepro option](../numerics/telemac2d.html) is preferably for *Windows* users and is somewhat cumbersome for creating geo-referenced point and line datasets to delineate the mesh.
-1. Use [*SALOME-HYDRO*](../get-started/telemac.html#salome) for generating computational meshes in *MED* geometry files (more details in the [*Telemac3d*](../numerics/telemac3d.html) tutorial).
+1. Use [*QGIS*](../get-started/geo.html#qgis) and the [*BASEmesh* plugin](pre-qgis.html#get-ready-with-qgis). The [*QGIS* Prepro option](pre-qgis) is convenient for creating geo-referenced 2D meshes and uses the pre-processing routines of [BASEMENT](../numerics/basement). So this is not an officially recommended version by the *TELEMAC* developers, but rather a home-brewed option on this website.
+1. Use the National Research Council Canada's [*Blue Kenue<sup>TM</sup>*](../get-started/install-telemac.html#bluekenue) GUI software. The [*Blue Kenue<sup>TM</sup>* Prepro option](../numerics/telemac2d) is preferably for *Windows* users and is somewhat cumbersome for creating geo-referenced point and line datasets to delineate the mesh.
+1. Use [*SALOME-HYDRO*](../get-started/install-telemac.html#salome) for generating computational meshes in *MED* geometry files (more details in the [*Telemac3d*](../numerics/telemac3d) tutorial).
 
 ### Model setup and run
 
-The centerpiece of any *TELEMAC* model is the control (steering or *CAS*) file, which can be comfortably set up with [Fudaa PrePro](../get-started/telemac.html#fudaa). The basic setup of a [steady](../numerics/telemac2d.html#steady) and a [unsteady](../numerics/telemac2d.html#unsteady) model are explained on the [Model Setup page](../numerics/telemac2d.html). In addition, explanations are provided on the use of the [Gaia module for modeling morphodynamic (sediment transport) processes](../numerics/telemac2d.html#prepro-gaia).
+The centerpiece of any *TELEMAC* model is the control (steering or *CAS*) file, which can be comfortably set up with [Fudaa PrePro](../get-started/install-telemac.html#fudaa). The basic setup of a [steady](../numerics/telemac2d.html#steady) and a [unsteady](../numerics/telemac2d.html#unsteady) model are explained on the [Model Setup page](../numerics/telemac2d). In addition, explanations are provided on the use of the [Gaia module for modeling morphodynamic (sediment transport) processes](../numerics/telemac2d.html#prepro-gaia).
 
 ### Post-processing
 
-*Artelia Eau et Environnement* created the [PostTelemac](https://plugins.qgis.org/plugins/PostTelemac/) plugin for *QGIS*, which is a powerful and convenient tool visualizing and post-processing *TELEMAC* simulation results. The [*Telemac2d*](../numerics/telemac2d.html) and [*Telemac3d*](../numerics/telemac3d.html) tutorials provide guidance on the usage of the *PostTelemac* plugin and [*SALOME*](../get-started/install-openfoam.html#salome) for post-processing *SLF* and *MED* results files, respectively.
+*Artelia Eau et Environnement* created the [PostTelemac](https://plugins.qgis.org/plugins/PostTelemac/) plugin for *QGIS*, which is a powerful and convenient tool visualizing and post-processing *TELEMAC* simulation results. The [*Telemac2d*](../numerics/telemac2d) and [*Telemac3d*](../numerics/telemac3d) tutorials provide guidance on the usage of the *PostTelemac* plugin and [*SALOME*](../get-started/install-openfoam.html#salome) for post-processing *SLF* and *MED* results files, respectively.
 
 ## The *TELEMAC* file structure
 
@@ -49,10 +49,10 @@ For any *TELEMAC* 2D simulation, the following input files are **mandatory**:
     + Prepare either with [Fudaa PrePro](../numerics/telemac2d.html#prepro-fudaa).
 * Geometry file
     + File format: `.slf` ([selafin](https://gdal.org/drivers/vector/selafin.html) or `.med` (*MED* file library from the [salome-platform](https://www.salome-platform.org)
-    + Prepare either with [*BlueKenue<sup>TM</sup>*](../get-started/telemac.html#bluekenue) or [Fudaa PrePro](../numerics/telemac2d.html#prepro-fudaa).
+    + Prepare either with [*BlueKenue<sup>TM</sup>*](../get-started/install-telemac.html#bluekenue) or [Fudaa PrePro](../numerics/telemac2d.html#prepro-fudaa).
 * Boundary conditions
     + File format: `.cli` (with `slf`) or `.bnd`/`.bcd` (with `.med`)
-    + Prepare `.cli` files with [*BlueKenue<sup>TM</sup>*](../get-started/telemac.html#bluekenue) and [Fudaa PrePro](../numerics/telemac2d.html#prepro-fudaa).
+    + Prepare `.cli` files with [*BlueKenue<sup>TM</sup>*](../get-started/install-telemac.html#bluekenue) and [Fudaa PrePro](../numerics/telemac2d.html#prepro-fudaa).
     + Prepare  `.bnd`/`.bcd` files either with *SALOME-HYDRO* or with a text editor (read more in the [Telemac3d tutorial](../numerics/telemac3d.html#bnd-mod)
 
 There are many more file formats, which are not computationally mandatory for running a simulation with *TELEMAC*, but essential in practice to yield reasonable results with a hydro-morphodynamic model (i.e., coupled hydrodynamic-sediment transport solver). Such **optional** files are:
@@ -88,8 +88,8 @@ More input files can be defined to simulate oil spills, pollutant transport, win
 
 Continue with setting up a mesh (*2dm* file) and a geometry file (*SLF*) with either
 
-* [> *QGIS* >](pre-qgis.html), or
-* [> *Blue Kenue<sup>TM</sup>* >](../numerics/telemac2d.html)
+* [> *QGIS* >](pre-qgis), or
+* [> *Blue Kenue<sup>TM</sup>* >](../numerics/telemac2d)
 
 ***
 
@@ -97,7 +97,7 @@ Continue with setting up a mesh (*2dm* file) and a geometry file (*SLF*) with ei
 
 ### The steering file (CAS)
 
-The steering file is the main simulation file with information about mandatory files (e.g., the [*selafin*](https://gdal.org/drivers/vector/selafin.html) geometry or the *cli* boundary), optional files, and simulation parameters. The steering file can be created or edited either with a basic text editor or advanced software such as [*Fudaa-PrePro*](../get-started/telemac.html#fudaa) or [*BlueKenue*](../get-started/telemac.html#bluekenue). In this example, we will use *BlueKenue*.
+The steering file is the main simulation file with information about mandatory files (e.g., the [*selafin*](https://gdal.org/drivers/vector/selafin.html) geometry or the *cli* boundary), optional files, and simulation parameters. The steering file can be created or edited either with a basic text editor or advanced software such as [*Fudaa-PrePro*](../get-started/install-telemac.html#fudaa) or [*BlueKenue*](../get-started/install-telemac.html#bluekenue). In this example, we will use *BlueKenue*.
 
 
 ### The geometry file (SLF or MED)
@@ -110,11 +110,11 @@ GEOMETRY FILE            : 't2d_channel.slf'
 GEOMETRY FILE FORMAT     : SLF  / or MED with SALOME preferably for 3D
 ```
 
-*MED* files are typically processed with either [*SALOME*](../get-started/install-openfoam.html#salome) or [*SALOME-HYDRO*](../get-started/telemac.html#salome-hydro), which are featured in the [*Telemac3d*](../numerics/telemac3d.html) tutorial.
+*MED* files are typically processed with either [*SALOME*](../get-started/install-openfoam.html#salome) or [*SALOME-HYDRO*](../get-started/install-telemac.html#salome-hydro), which are featured in the [*Telemac3d*](../numerics/telemac3d) tutorial.
 
 ### The boundary conditions (CLI or BND/BCD) and liquid boundary (QSL) files
 
-The boundary file in *cli* format contains information about inflow and outflow nodes (coordinates and IDs). The *cli* file can be opened and modified with any text editor, which is not recommended to avoid inconsistencies. Preferably use [*Fudaa-PrePro*](../get-started/telemac.html#fudaa) or [*BlueKenue*](../get-started/telemac.html#bluekenue) for generating and/or modifying *cli* files.
+The boundary file in *cli* format contains information about inflow and outflow nodes (coordinates and IDs). The *cli* file can be opened and modified with any text editor, which is not recommended to avoid inconsistencies. Preferably use [*Fudaa-PrePro*](../get-started/install-telemac.html#fudaa) or [*BlueKenue*](../get-started/install-telemac.html#bluekenue) for generating and/or modifying *cli* files.
 
 In addition, users can define a liquid boundary conditions file (*qsl*) to define time-dependent boundary conditions (e.g., discharge, water depth, flow velocity or tracers).
 
@@ -185,6 +185,6 @@ The name format of the results file can be modified in the steering file with:
 RESULTS FILE             : 't2d_channel_output.slf'
 ```
 
-Because this file is generated by *TELEMAC* when the simulation is running, it does not need to exist for starting the simulation. A good option for visualizing the results file is the [*PostTelemac* Plugin in *QGIS*](../get-started/telemac.html#qgis)
+Because this file is generated by *TELEMAC* when the simulation is running, it does not need to exist for starting the simulation. A good option for visualizing the results file is the [*PostTelemac* Plugin in *QGIS*](../get-started/install-telemac.html#qgis)
 
-*MED* results files are typically processed with either [*SALOME*](../get-started/install-openfoam.html#salome) or [*SALOME-HYDRO*](../get-started/telemac.html#salome-hydro), which are featured in the [*Telemac3d*](../numerics/telemac3d.html) tutorial.
+*MED* results files are typically processed with either [*SALOME*](../get-started/install-openfoam.html#salome) or [*SALOME-HYDRO*](../get-started/install-telemac.html#salome-hydro), which are featured in the [*Telemac3d*](../numerics/telemac3d) tutorial.

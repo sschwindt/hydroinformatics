@@ -28,8 +28,8 @@ in the bottom layer are handled by GAIA.
 ## Mandatory files
 The following files are mandatory to simulate morphodynamics:
 
-* the steering files for GAIA and the hydrodynamic module (e.g. [T2D](../numerics/telemac2d.html)
-or [T3D](../numerics/telemac3d.html)
+* the steering files for GAIA and the hydrodynamic module (e.g. [T2D](../numerics/telemac2d)
+or [T3D](../numerics/telemac3d)
     - File format = *.cas
 
 * the geometry file

@@ -39,10 +39,10 @@ A *Telemac3d* simulation requires similar input files as a Telemac2d simulation 
     + File format: `.qsl`
     + Prepare with any text editor
 
-Optional files such as a friction data file or a liquid boundary file can also be implemented, but are not featured here. Read more about input data files and their formats in the [*TELEMAC* introduction](../numerics/telemac.html).
+Optional files such as a friction data file or a liquid boundary file can also be implemented, but are not featured here. Read more about input data files and their formats in the [*TELEMAC* introduction](../numerics/telemac).
 
-
-## Start SALOME-HYDRO {#prepro-salome}
+(prepro-salome)=
+## Start SALOME-HYDRO
 
 With *SALOME-HYDRO* being installed in a directory called **/home/salome-hydro/appli_V2_2/** (adapt according to the installation directory and version of SALOME-HYDRO), launch *SALOME-HYDRO* (give it a moment to start up):
 
@@ -403,7 +403,8 @@ Over-constrained triangles might be hidden by the axes arrows in the corner. Thu
 Save the project by clicking on the disk symbol.
 ```
 
-## Export MED File {#med-export}
+(med-export)=
+## Export MED File
 
 Exporting the mesh to a MED file requires the definition of mesh groups. To do so, highlight *Mesh_Hn_1* in the object browser and right-click on it. Select **Create Groups from Geometry** from the mesh context menu.
 
@@ -479,7 +480,8 @@ Make the following definitions in the **Boundary conditions** frame (table):
 
 Then click on **Apply and Close**.
 
-### Modify the Boundary File {#bnd-mod}
+(bnd-mod)=
+### Modify the Boundary File
 
 The boundary file created with the *HydroSolver* involves a couple of issues that need to be resolved to enable *TELEMAC* assigning the correct boundary conditions. For this purpose, open the boundary condition file in a text editor (e.g., on *Xfce* desktop use right-click > *mousepad*) and make the following adaptations.
 
@@ -537,7 +539,7 @@ The below code block shows the steering file `t3d_flume.cas` and details for eve
 To facilitate setting up the steering (CAS) file for this tutorial, [download the template](https://raw.githubusercontent.com/Ecohydraulics/telemac-helpers/master/model-templates/t3d_template.cas) (right-click on the link > *Save Link As...* > navigate to the local tutorial folder), which contains more descriptions and options for simulation parameters.
 ```
 
-```yaml
+```fortran
 / t3d_flume.cas
 /------------------------------------------------------------------/
 /			COMPUTATION ENVIRONMENT
@@ -749,7 +751,7 @@ The `0.` value for the water does physically not make sense at the upstream boun
 
 Instead of a list in the steering *CAS* file, the liquid boundary conditions can also be defined with a liquid boundary condition file in *ASCII* text format. For this purpose, a `LIQUID BOUNDARIES FILE` or a `STAGE-DISCHARGE CURVES FILE` (sections 4.3.8 and 4.3.10 in the [Telemac 3d docs](http://ot-svn-public:telemac1*@svn.opentelemac.org/svn/opentelemac/tags/v8p1r1/documentation/telemac3d/user/telemac3d_user_v8p1.pdf), respectively can be defined. The [*t3d_template.cas*](https://raw.githubusercontent.com/Ecohydraulics/telemac-helpers/master/model-templates/t3d_template.cas) file includes these keywords in the *COMPUTATION ENVIRONMENT* section, even though they are disabled. A liquid boundary file (*QSL*) may look like this:
 
-```
+```fortran
 # t3d_canal.qsl
 # time-dependent inflow upstream-discharge Q(2) and outflow downstream-depth SL(1)
 T           Q(2)     SL(1)
@@ -843,7 +845,7 @@ telemac3d.py flume3d.cas
 
 As a result, a successful computation should end with the following lines (or similar) in *Terminal*:
 
-```dotnet
+```fortran
 [...]
 BOUNDARY FLUXES FOR WATER IN M3/S ( >0 : ENTERING )
 FLUX BOUNDARY      1                          :    -49.85411

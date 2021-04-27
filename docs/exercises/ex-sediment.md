@@ -1,11 +1,11 @@
-# One-dimensional (1D) cross-section-averaged sediment transport
+# One-dimensional (1d) Cross-section Averaged Sediment Transport
 
 ```{admonition} Goals
 This exercise features the application of the Meyer-Peter & Müller (1948) bed load transport formulae to a valid application: 1D, cross-section averaged hydraulics. Write object-oriented code with custom classes for tailored interactions with *xlsx* workbooks. The homework involves using built-in methods of *pandas* data frames and plotting.
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *numpy* and *pandas*. Read and understand the [data handling with *numpy* and *pandas*](../python-basics/pypynum.html), as well as [object orientation](../python-basics/pyclasses.html).
+*Python* libraries: *numpy* and *pandas*. Read and understand the [data handling with *numpy* and *pandas*](../python-basics/pynum), as well as [object orientation](../python-basics/classes).
 ```
 
 Get ready by cloning the exercise repository:
@@ -14,12 +14,17 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-SedimentTransport.git
 ```
 
-![rhone](https://github.com/Ecohydraulics/media/raw/master/jpg/arbogne.jpg)<br>
-*<sub>The Argbogne River in Switzerland (source: Sebastian Schwindt 2013).</sub>*
+```{figure} https://github.com/Ecohydraulics/media/raw/master/jpg/arbogne.jpg
+:alt: arbogne Switzerland Fribourg
+:name: arbogne
+
+The Arbogne River in Switzerland (source: Sebastian Schwindt 2013).
+```
+
 
 ## Theory
 
-### 1D cross-section averaged hydrodynamics
+### 1d Cross-section Averaged Hydrodynamics
 From the [stage-discharge (*Manning-Strickler* formula) exercise](https://github.com/Ecohydraulics/Exercise-ManningStrickler), we recall the formula to calculate the relationship between water depth *h* (incorporated in the hydraulic radius *R<sub>h</sub>*) and flow velocity *u*:
 *u = 1/n · S<sub>e</sub><sup>1/2</sup> · R<sub>h</sub><sup>2/3</sup>*
 
@@ -31,18 +36,30 @@ where
     - the wetted perimeter of a trapezoid is *P = b + 2h·(m² + 1)<sup>1/2</sup>*;
     - *b* (channel base width) and *m* (bank slope) are illustrated in the figure below to calculate the depth-dependent water surface width *B*=*b+2·h·m*.
 
-![FlowCrossSection](https://github.com/Ecohydraulics/media/raw/master/png/flow-cs.png)
+
+```{figure} https://github.com/Ecohydraulics/media/raw/master/png/flow-cs.png
+:alt: 1d hydraulics parameters
+:name: cs-sed
+```
 
 This exercise uses one-dimensional (1D) cross-section averaged hydraulic data produced with the US Army Corps of Engineers' [*HEC-RAS*](https://www.hec.usace.army.mil/software/hec-ras/) software, which solves the Manning-Strickler formula numerically for any flow cross-section shape. In this exercise, *HEC-RAS* provides the hydraulic data needed to determine the sediment transport capacity of a channel cross-section, although no explanations for creating, running, and exporting data from *HEC-RAS* models are given.
 
 ### Sediment transport
 
 Fluvial sediment transport can be distinguished into two modes: (1) suspended load and (2) bed load (see figure below). Finer particles with a weight that can be carried by the fluid (water) are transported as suspended load. Coarser particles rolling, sliding, and jumping on the channel bed are transported as bed load. There is another type of transport, the so-called wash load, which is finer than the coarse bed load, but too heavy (large) to be transported in suspension ([Einstein 1950](http://dx.doi.org/10.22004/ag.econ.156389)).
-![transport](https://github.com/Ecohydraulics/media/raw/master/png/sediment-transport.png)
+
+```{figure} https://github.com/Ecohydraulics/media/raw/master/png/sediment-transport.png
+:alt: 1d sediment transport
+:name: transport
+```
 
 In the following, we will look at the bed load transport mode. In this case, a sediment particle located in or on the riverbed is mobilized by shear forces of the water as soon as they exceed a critical value (see figure below). In river hydraulics, the so-called dimensionless bed shear stress or *Shields* stress ([Shields 1936](http://resolver.tudelft.nl/uuid:61a19716-a994-4942-9906-f680eb9952d6) is often used as the threshold value for the mobilization of sediment from the riverbed. This exercise uses one of the dimensionless bed shear stress approaches and the next section provides more explanations.
 
-![uptake](https://github.com/Ecohydraulics/media/raw/master/png/sediment-uptake.png)
+```{figure} https://github.com/Ecohydraulics/media/raw/master/png/sediment-uptake.png
+:alt: sediment uptake mobilization
+:name: uptake
+```
+
 
 
 ### The Meyer-Peter and Müller (1948) formula <a name="mpm"></a>
@@ -78,7 +95,6 @@ The cross-section averaged bed load *Q<sub>b</sub>* (kg/s) is then:
 where *b<sub>eff</sub>* is the hydraulically active channel width of the flow cross-section (e.g., for a trapezoid *b<sub>eff</sub> = 0.5 · (b + B)*)
 
 
-
 ## Code
 
 ### Set the frame
@@ -92,7 +108,10 @@ The object-oriented code will use custom classes that we will call within a **`m
 
 We will create the classes and functions in the indicated scripts according to the following flow chart:
 
-![structure](https://github.com/Ecohydraulics/Exercise-SedimentTransport/raw/master/graphs/uml.png)
+```{figure} https://github.com/Ecohydraulics/Exercise-SedimentTransport/raw/master/graphs/uml.png
+:alt: sediment transport calculation python code structure
+:name: structure
+```
 
 To start with the `main.py` script, add a `main` function as well as a `get_char_grain_size` and a `calculate_mpm` function. Moreover, make the script *stand-alone* executable:
 
@@ -454,7 +473,8 @@ def main():
 ```
 
 ## Launch and debug
-Using [*PyCharm*](../get-started/ide.html#pycharm), right-click in the `main.py` script and click `> Run 'main'`. If the script crashes or raises error messages, trace them back, and fix the issues. Add `try` - `except` statements where necessary and recall the [debugging instructions](../python-basics/pypyerror.html).
+
+Using [PyCharm](../get-started/ide.html#pycharm), right-click in the `main.py` script and click `> Run 'main'`. If the script crashes or raises error messages, trace them back, and fix the issues. Add `try` - `except` statements where necessary and recall the [debugging instructions](../python-basics/pyerror).
 
 ```{note}
 The program intentionally produces warning messages because some of the profile characteristics do not fulfill the Meyer-Peter & Müller formula's validity range.
@@ -509,5 +529,4 @@ There are many possible solutions to this exercise and any solution that results
 **HOMEWORK 1:**  Implement the [*Parker-Wong*](https://doi.org/10.1061/(ASCE)0733-9429(2006)132:11(1159) correction for the *Meyer-Peter & Müller* formula: *&Phi;<sub>pw</sub> &asymp; 4.93 · (&tau;<sub>x</sub> - &tau;<sub>x,cr</sub>)<sup>1.6</sup>*. Implement the formula in the `MPM` class either use an optional keyword argument in `compute_phi` or a new method.
 **HOMEWORK 2:**  Use the `openpyxl` library to add a background color to the headers of output tables.
 **HOMEWORK 3:**  Choose and extract 3 profiles from `mpm_results` and plot the dimensional bed load transport *Q<sub>b</sub>* (y-axis) against the discharge *Q* (x-axis).
-
 ```

@@ -49,7 +49,7 @@ Terrain survey data are mostly delivered in the shape of an x-y-z point dataset.
 
 1. [Download](https://github.com/hydro-informatics/materials-bm/blob/master/points_raw/points.txt) the point file from the repository (if necessary, copy the file contents locally into a text editor and save the file as `points.txt` in a local project directory)
 1. [Download](https://github.com/hydro-informatics/materials-bm/raw/master/breaklines.zip) the zipped breaklines shapefile into the project folder and unpack `breaklines.shp`.
-1. In *QGIS*, click on the `Layer` menu > `Add Layer` > `Add Delimited Text Layer...` (see {numref}`Fig. %s `qgis-add-lyr>`)
+1. In *QGIS*, click on the `Layer` menu > `Add Layer` > `Add Delimited Text Layer...` (see {numref}`Fig. %s <qgis-add-lyr>`)
 1. In the `Add Delimited Text Layer` (`Data Source Manager | Delimited Text`) wizard (see details in Figure 4):
     * Choose [*points.txt*](https://github.com/hydro-informatics/materials-bm/blob/master/points_raw/points.txt) in the `File name` field (alternatively use [*points.csv*](https://github.com/hydro-informatics/materials-bm/blob/master/points_raw/points.csv)
     * Name the new layer (e.g., points)
@@ -81,13 +81,13 @@ Finally, rename the three fields (`FIELD_1`, `FIELD_2`, `FIELD_3`) to `X`, `Y`, 
 
 The model boundary defines the calculation extent and needs to be define within a polygon shapefile that encloses all points in the above produced point shapefile. *QGIS* provides a Convex Hull tool that enables the automated creation of the outer boundary. This tool is used as follows:
 
-- In *QGIS*' `Processing` menu, select `Toolbox` (see {numref}`Fig. %s <qgis-tbx>`) The `Toolbox` sub-window opens now.
+- In *QGIS*' `Processing` menu, select `Toolbox` (see {numref}`Fig. %s <qgis-tbx-fig>`) The `Toolbox` sub-window opens now.
 - In the toolbox, click on `Vector Geometry` > `Concave Hull (Alpha Shapes)`, which opens the `Concave Hull (Alpha Shapes)` wizard (see {numref}`Fig. %s <qgis-chull>`).
 - In the `Concave Hull (Alpha Shapes)` wizard, select the `xyz-points` layer as `Input Layer`, set the `Threhold` to 0.300 (keep default), define an output `Concave Hull` shapefile (e.g., `boundary.shp`) by clicking on the `...` button, and click on `Run`.
 
 ```{figure} ../img/qgis-tbx.png
 :alt: qgis basement toolbox
-:name: qgis-tbx
+:name: qgis-tbx-fig
 
 Open QGIS' Toolbox from the main menu.
 ```
@@ -136,7 +136,7 @@ The final boundary (hull of the point cloud).
 Breaklines indicate, for instance, channel banks and the riverbed, and need to coincide with DEM points (shapefile from [above section](#epd)). Breaklines a stored in a line (vector) shapefile, which is here already provided (`breaklines.shp`). Integrate the breaklines file into the *QGIS* project as follows with a click on *QGIS*' `Layer` menu > `Add Vector Layer...` and select the provided `breaklines.shp` file (if not yet done, [download](https://github.com/hydro-informatics/materials-bm/raw/master/breaklines.zip) and unpack the shapefile).
 Note: The default layer style `Single Symbol`. For better representation, double-click on the breaklines layer, got to the `Symbology` ribbon and select `Categroized` (or `Graduated`) instead of `Single Symbol` (at the very top of the `Layer Properties` window). In the `Value` field, select `type`, then click the `classify` button on the bottom of the `Layer Properties` window. The listbox will now show the values bank, bed, hole, and all other values. Change color pattern and/or click `OK` on the bottom-right of the `Layer Properties` window.
 
-(tin)=
+(tin-dem)=
 ## TIN Elevation Model
 
 This section explains the creation of a triangulated irregular network (TIN) with the *QGIS* plugin *BASEmesh* (make sure that all steps in the [above section](#start-qgis) were successful).
@@ -209,7 +209,7 @@ Example for distributing region points in the project boundaries (remark: the ma
 (qualm)=
 ## Quality meshing
 
-A quality mesh accounts for the definitions made within the regions shapefile ([see above section](#regions), but it does not include elevation data. Thus, after generating a quality mesh, elevation information needs to be added from the TIN ([see above section](#tin)). This section first explains the [generation of a quality mesh](qualm-gen) and then the [insertion of elevation data](#qualm-interp)).
+A quality mesh accounts for the definitions made within the regions shapefile ([see above section](#regions), but it does not include elevation data. Thus, after generating a quality mesh, elevation information needs to be added from the TIN ([see above section](#tin-dem)). This section first explains the [generation of a quality mesh](qualm-gen) and then the [insertion of elevation data](#qualm-interp)).
 
 (qualm-gen)=
 ### Quality mesh generation
@@ -230,10 +230,10 @@ BASEmesh's Quality Meshing wizard.
 Quality meshing may take time. After successful mesh generation the files `base_qualitymesh_qualityNodes.shp` and `base_qualitymesh_qualityElements.shp` are generated. Finally, click `Close`.
 
 ### Elevation data interpolation on a quality mesh<a name="qualm-interp"></a>
-*BASEmesh*’s `Interpolation` wizard projects elevation data onto the quality mesh by interpolation from a TIN. Make sure to check (show) the `base_qualitymesh_qualityNodes` and `base_qualitymesh_qualityElements` from the last step, and `base_tin_elevation_nodes.shp` and [`base_tin_elevation_elements.shp`](#tin). Then, open *BASEmesh*’s `Interpolation` wizard (*QGIS* `Plugins` menu > *BASEmesh* > `Interpolation`) and (see also {numref}`Fig. %s <qgis-qualm-interp>`):
+*BASEmesh*’s `Interpolation` wizard projects elevation data onto the quality mesh by interpolation from a TIN. Make sure to check (show) the `base_qualitymesh_qualityNodes` and `base_qualitymesh_qualityElements` from the last step, and `base_tin_elevation_nodes.shp` and [`base_tin_elevation_elements.shp`](#tin-dem). Then, open *BASEmesh*’s `Interpolation` wizard (*QGIS* `Plugins` menu > *BASEmesh* > `Interpolation`) and (see also {numref}`Fig. %s <qgis-qualm-interp>`):
 
 1. In the `Quality Mesh` canvas, select `base_qualitymesh_qualityNodes`
-1. In the `Elevation Data` canvas, activate the `Elevation Mesh` checkbox and select `base_tin_elevation_nodes.shp` and [`base_tin_elevation_elements.shp`](#tin)
+1. In the `Elevation Data` canvas, activate the `Elevation Mesh` checkbox and select `base_tin_elevation_nodes.shp` and [`base_tin_elevation_elements.shp`](#tin-dem)
 1. In the `Shapefile output` canvas, define the output file as finalmesh.shp.
 1. Click `Interpolate elevations` (may take a while)
 After successful execution, the new layer finalmesh_Interpolated_nodes_elevMesh.shp will be created. Click Close to close the Interpolation wizard.
@@ -249,7 +249,7 @@ BASEmesh's Interpolation wizard and setup.
 ### Verify quality mesh elevation
 
 After the elevation interpolation, verify that elevations were correctly assigned. To identify potential outliers double-click on the new `finalmesh_interpolated_Nodes_elevMesh` and go to the `Symbology` ribbon. Select `Graduated` at the very top of the window (instead of `Single Symbol`), set the `Value` to Z, METHOD to COLOR, choose a color ramp, and click on the `classify` bottom (lower part of the window). Click on `Apply` and `OK` to close the `Symbology` window.
-{numref}`Fig. %s <qgis-verify-qualm>` shows an example of interpolated mesh, with some irregularities (red points). The irregularities are caused by local imprecision of breaklines (line end points do not coincide with the [`xyz-points.shp`](#epd)). Also some points of the [boundary](#boundary) do not correspond the `xyz-points.shp`. If such irregularities occur, zoom at the red points (irregularities) and ensure that the breakline and boundary nodes all exactly coincide with those stored in `xyz-points.shp`. When all nodes are corrected, repeat all steps from the [TIN generation](#tin) onward.
+{numref}`Fig. %s <qgis-verify-qualm>` shows an example of interpolated mesh, with some irregularities (red points). The irregularities are caused by local imprecision of breaklines (line end points do not coincide with the [`xyz-points.shp`](#epd)). Also some points of the [boundary](#boundary) do not correspond the `xyz-points.shp`. If such irregularities occur, zoom at the red points (irregularities) and ensure that the breakline and boundary nodes all exactly coincide with those stored in `xyz-points.shp`. When all nodes are corrected, repeat all steps from the [TIN generation](#tin-dem) onward.
 
 ```{figure} ../img/qgis-verify-qualm.png
 :alt: basemesh verify quality mesh

@@ -5,7 +5,7 @@ Load custom modules and functions in a script. Open comma-type delimited files a
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *pandas* and *matplotlib*. Understand data handling with [*pandas*](../python-basics/pypynum.html).
+*Python* libraries: *pandas* and *matplotlib*. Understand data handling with [pandas](../python-basics/pynum).
 ```
 
 Get ready by cloning the exercise repository:
@@ -14,9 +14,12 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-FloodReturn.git
 ```
 
-![flood](https://github.com/hydro-informatics/hydro-informatics.github.io/raw/master/images/hw-aibling.jpg)<br>
-*<sub>Flood at the Mangfall River in Bavaria (source: KSS 2020).</sub>*
+```{figure} https://github.com/hydro-informatics/hydro-informatics.github.io/raw/master/images/hw-aibling.jpg
+:alt: floods Mangfall Bad Aibling Hochwasser
+:name: flood-image
 
+Flood at the Mangfall River in Bavaria (source: KSS 2020).
+```
 
 ## Terminology
 Flood frequency analysis uses series of discharge data (e.g., from a gauging station) and evaluates the occurrence probability of a particular discharge. Thus, the occurrence probability defines the frequency of a discharge, which is important for two reasons:

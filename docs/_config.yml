@@ -38,6 +38,8 @@ parse:
     - substitution
 
   myst_url_schemes: [mailto, http, https]  # URI schemes that will be recognised as external URLs in Markdown links
+  myst_substitutions:
+    ft_url: "[flusstools](https://flusstools.readthedocs.io)"
 
 ################################################################################
 # LaTeX-specific settings

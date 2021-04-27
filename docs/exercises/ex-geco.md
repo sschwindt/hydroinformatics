@@ -5,7 +5,7 @@ This exercise guides through the creation of rasters (`osgeo.gdal.Dataset`), the
 ```
 
 ```{admonition} Requirements
-*Python* libraries: *numpy*, *pandas*, *gdal*, *geopandas*, *alphashape*, *shapely*, and *json*. Understand how [object orientation](python-basics/pyclasses.html) works as well as [geospatial data and analyses with *Python*](geo-python-basics/python.html).
+*Python* libraries: *numpy*, *pandas*, *gdal*, *geopandas*, *alphashape*, *shapely*, and *json*. Understand how [object orientation](../python-basics/classes) works as well as [geospatial data and analyses with *Python*](../geopy/geo-python).
 ```
 
 Get ready by cloning the exercise repository:
@@ -14,8 +14,13 @@ Get ready by cloning the exercise repository:
 git clone https://github.com/Ecohydraulics/Exercise-geco.git
 ```
 
-![fish](https://github.com/Ecohydraulics/media/raw/master/jpg/yuba-fish.jpg) <br>
-*<sub>Sacramento suckers in the South Yuba River (source: Sebastian Schwindt 2019).</sub>*
+```{figure} https://github.com/Ecohydraulics/media/raw/master/jpg/yuba-fish.jpg
+:alt: fish Sacramento succer south yuba river
+:name: fish
+
+Sacramento suckers in the South Yuba River (source: Sebastian Schwindt 2019).
+```
+
 
 ## What is Habitat Suitability?
 
@@ -34,9 +39,9 @@ The combination of multiple *HSI* values (e.g., water depth-related *HSI<sub>h</
 * Geometric mean:  *cHSI =* (*&prod;<sub>par</sub> HSI<sub>par</sub>*)*<sup>1/n</sup>*<br>For example, the combination of the water depth-related *HSI<sub>h</sub>* and flow velocity-related *HSI<sub>u</sub>* with the geometric mean method is: *cHSI = (HSI<sub>h</sub> · HSI<sub>u</sub>)<sup>1/2</sup>*
 * Product:  *cHSI = &prod;<sub>par</sub> HSI<sub>par</sub>*<br>For example, the combination of the water depth-related *HSI<sub>h</sub>* and flow velocity-related *HSI<sub>u</sub>* with the product method is: *cHSI =* (*HSI<sub>h</sub> · HSI<sub>u</sub>*)
 
-Therefore, if the pixel-based *HSI* values for water depth and flow velocity are known from a two-dimensional (2D) hydrodynamic model, then for each pixel the *cHSI* value can be calculated either as the product or geometric mean of the single-parameter *HSI<sub>par</sub>* rasters.
+Therefore, if the pixel-based *HSI* values for water depth and flow velocity are known from a two-dimensional (2d) hydrodynamic model, then for each pixel the *cHSI* value can be calculated either as the product or geometric mean of the single-parameter *HSI<sub>par</sub>* rasters.
 
-This habitat assessment concept was introduced by [Bovee (1986)](https://pubs.er.usgs.gov/publication/70121265) and [Stalnaker (1995)](www.dtic.mil/cgi-bin/GetTRDoc?AD=ADA322762). However, these authors built their usable (physical) habitat assessment based on one-dimensional (1D) numerical models that were commonly used in the last millennium. Today, 2D numerical models are the state-of-the-art to determine physical habitat geospatially explicit based on pixel-based *cHSI* values. There are two different options for calculating the usable habitat area (*UHA*) based on pixel-based *cHSI* values (and even more options can be found in the scientific literature). <a name="uha-methods"></a>
+This habitat assessment concept was introduced by [Bovee (1986)](https://pubs.er.usgs.gov/publication/70121265) and [Stalnaker (1995)](https://apps.dtic.mil/sti/pdfs/ADA322762.pdf). However, these authors built their usable (physical) habitat assessment based on one-dimensional (1D) numerical models that were commonly used in the last millennium. Today, 2D numerical models are the state-of-the-art to determine physical habitat geospatially explicit based on pixel-based *cHSI* values. There are two different options for calculating the usable habitat area (*UHA*) based on pixel-based *cHSI* values (and even more options can be found in the scientific literature). <a name="uha-methods"></a>
 
 1. Use a threshold value above which a pixel is classified as a usable habitat.
     * Typical values for the threshold value *cHSI<sub>crit</sub>* are between 0.4 (tolerant) and 0.75 (strict).
@@ -67,7 +72,7 @@ The provided *QGIS* project file `visualize_with_QGIS.qgz` helps to verify input
 
 ### Two-dimensional (2D) hydrodynamic modelling (folder: **basement**) <a name="2dm"></a>
 
-This exercise uses (hydraulic) flow velocity and water depth rasters (*GeoTIFF*s) produced with the [*ETH Zurich*'s *BASEMENT*](https://basement.ethz.ch/) software. Read more about hydrodynamic modeling with *BASEMENT* on [hydro-informatics.github.io](bm.html). The hydraulic rasters were produced with the *BASEMENT* developer's [example data from the *Flaz River*](http://people.ee.ethz.ch/~basement/baseweb/download/tutorials/Flaz_2D_v3.zip) in Switzerland ([read more on their website](https://basement.ethz.ch/download/tutorials/tutorials3.html)).
+This exercise uses (hydraulic) flow velocity and water depth rasters (*GeoTIFF*s) produced with the [*ETH Zurich*'s *BASEMENT*](https://basement.ethz.ch/) software. Read more about hydrodynamic modeling with *BASEMENT* on [hydro-informatics.github.io](../numerics/basement). The hydraulic rasters were produced with the *BASEMENT* developer's [example data from the *Flaz River*](http://people.ee.ethz.ch/~basement/baseweb/download/tutorials/Flaz_2D_v3.zip) in Switzerland ([read more on their website](https://basement.ethz.ch/download/tutorials/tutorials3.html)).
 The water depth `water_depth.tif` and flow velocity `flow_velocity.tif` rasters are provided for this exercise in the folder `/basement/`.
 
 ### Habitat Suitability Index *HSI* curves (folder: **habitat**) <a name="hsi-curves"></a>
